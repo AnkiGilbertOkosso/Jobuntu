@@ -5,5 +5,13 @@
     box-sizing: border-box;
 }
 body{
+    text-rendering: optimizeSpeed;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+
     font-family: "Inter", sans-serif;
+}
+nav{
+    z-index:10001  !important;
+    position: sticky;
 }

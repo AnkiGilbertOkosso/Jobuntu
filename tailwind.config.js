@@ -1,9 +1,15 @@
+/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/flowbite/**/*.js"
+
   ],
+  
+  
   theme: {
     extend: {
       fontFamily: {
@@ -15,7 +21,8 @@ export default {
         'search-color': "#570AF1",
         'position': "#0A65CC",
         'featured': "#E05151",
-        'nav':'#F1F2F4'
+        'nav':'#F1F2F4',
+        'hero-color':'#F1F2F499'
 
 
 
@@ -23,6 +30,11 @@ export default {
     
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+
+  ],
+ 
 }
+
 
