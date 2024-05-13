@@ -1,0 +1,22 @@
+.nav-links {
+    margin-right: 10px;
+    /* height: 40px; */
+    /* margin-left: 100px; */
+}
+a{
+    font-size: 0.9rem;
+
+}
+
+nav {
+   /* margin-left: 0 20px; */
+   top: 0;
+   position: sticky;
+   z-index: 999;
+   /* padding-top: 20px; */
+    width: 100%;
+
+}
+.mr-2{
+    width: 30px;
+}
