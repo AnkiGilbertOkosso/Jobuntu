@@ -1,0 +1,17 @@
+.nav-links {
+    margin-right: 10px;
+    /* height: 40px; */
+    /* margin-left: 100px; */
+}
+a{
+    font-size: 0.9rem;
+    text-wrap: nowrap;
+
+}
+.logo{
+    height: fit-content;
+}
+.mr-2{
+    width: 30px;
+}
+/*  */
