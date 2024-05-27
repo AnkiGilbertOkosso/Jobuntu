@@ -12,9 +12,7 @@ Welcome to Jobuntu, a job board application designed as a graduation project. Th
   - [Frontend](#frontend-setup)
   - [Backend](#backend-setup)
 - [Usage](#usage)
-- [Contributing](#contributing)
 - [Authors](#authors)
-- [License](#license)
 
 ## Overview
 
