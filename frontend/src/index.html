@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobuntu Home page</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/91ebbc8982.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+  
+   body {
+      font-family: "Quicksand", sans-serif;
+    }
+  </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Top Bar -->
+    <div
+      class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm">
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-primary border-b-2">Home</a>
+        <a href="#" class="text-gray-700">Find Job</a>
+        <a href="#" class="text-gray-700">Employers</a>
+        <a href="#" class="text-gray-700">Candidates</a>
+        <a href="#" class="text-gray-700">Pricing Plans</a>
+        <a href="#" class="text-gray-700">Customer Supports</a>
+      </div>
+      <div class="flex items-center justify-center space-x-4">
+        <div>
+          <i class="fa-solid fa-phone"></i>
+          <span class="font-medium">+237 620 205 447</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <img src="https://flagcdn.com/w20/us.png"
+            srcset="https://flagcdn.com/w40/us.png 2x" width="20"
+            alt="United States" />
+          <select class="bg-transparent focus:outline-none text-gray-700">
+            <option value="en">
+              <img src="https://flagcdn.com/w20/us.png" alt="Icon" /> English
+            </option>
+            <option value="fr">
+              <img src="path_to_your_icon" alt="Icon" /> French
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar -->
+    <nav class="bg-white py-4 px-4 sticky top-0 z-50">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <img src="/assets/logo.png" alt />
+            <div class="hidden md:flex items-center space-x-2">
+              <div
+                class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+                <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag"
+                  class="w-6 h-4 mr-2" />
+                <select
+                  class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+                  <option value="Cameroon">Cameroon</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <div class="flex items-center border-l border-gray-200 pl-4">
+                  <svg class="w-4 h-4 text-purple-500 mr-2" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                  </svg>
+                  <input type="text" placeholder="Job title, keyword, company"
+                    class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+              <button
+                class="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">
+                Sign In
+              </button>
+              <button class="bg-purple-600 text-white px-4 py-2 rounded">
+                Post A Jobs
+              </button>
+            </div>
+          </div>
+          <div class="md:hidden flex gap-2">
+            <button className="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">Sign In</button>
+            <button data-collapse-toggle="navbar-default" id="menu-toggle"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              aria-controls="navbar-default" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="navbar-default" class="hidden md:hidden">
+        <a href="#" class="block px-4 py-2 text-primary border-b-2">Home</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Find Job</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Employers</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Candidates</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Pricing Plans</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Customer Supports</a>
+    <div class="items-center space-x-2">
+          <div
+            class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+            <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag"
+              class="w-6 h-4 mr-2" />
+            <select
+              class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+              <option value="Cameroon">Cameroon</option>
+              <!-- Add more options as needed -->
+            </select>
+            <div class="flex items-center border-l border-gray-200 pl-4">
+              <svg class="w-4 h-4 text-purple-500 mr-2" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+              </svg>
+              <input type="text" placeholder="Job title, keyword, company"
+                class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
+    </nav>
+    <!-- Nav Bar End -->
+
+    <!-- Hero section  -->
+    <div
+      class="container flex flex-col py-4 px-4 mx-auto space-y-6 md:py-16 md:flex-row md:items-center md:space-x-6">
+      <div class="flex flex-col items-center w-full md:flex-row md:w-1/2">
+        <div class="max-w-lg">
+          <h1
+            class="text-4xl mt-10 md:mt-0 font-bold tracking-wide text-gray-800 md:text-6xl">
+            Find a job that suits your interest & skills.
+          </h1>
+          <p class="mt-4 text-gray-600">
+            Aliquam vitae turpis in diam convallis finibus in at risus. Nullam
+            in scelerisque leo, eget sollicitudin velit bestibulum.
+          </p>
+          <div class="mt-6">
+            <div
+              class="block md:flex border py-4 md:py-2 space-y-6 md:space-y-0 rounded-lg shadow-lg bg-white md:w-fit">
+              <div class="flex items-center pl-4">
+                <svg class="text-purple-500 mr-2" width="24" height="24"
+                  fill="none" stroke="currentColor"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                </svg>
+                <input type="text" placeholder="Job title, Keyword..."
+                  class="flex-grow text-gray-700 outline-none" />
+              </div>
+
+              <div class="flex items-center pl-4 pr-4 border-l">
+                <svg class="mr-2" width="20" height="24" viewBox="0 0 20 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M19 10C19 17 10 23 10 23C10 23 1 17 1 10C1 7.61305 1.94821 5.32387 3.63604 3.63604C5.32387 1.94821 7.61305 1 10 1C12.3869 1 14.6761 1.94821 16.364 3.63604C18.0518 5.32387 19 7.61305 19 10Z"
+                    stroke="#570AF1" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+                <input type="text" placeholder="Your Location"
+                  class="flex-grow text-gray-700 outline-none" />
+              </div>
+              <div class="flex items-center">
+                <button type="submit"
+                  class="flex-grow text-center justify-center object-contain text-white bg-primary mx-2 my-2 font-medium rounded-md text-md px-8 py-3 w-full">
+                  Search
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="py-4 flex flex-inline">
+            <h6 class="text-sm text-[#9199A3]">Suggestion:</h6>
+            <span class="text-sm">Designer, <span class="text-primary">Programming</span>,
+              Digital
+              Marketing, Video, Animation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center w-full h-full md:w-1/2">
+        <img class="object-cover w-full h-full max-w-2xl rounded-md"
+          src="/assets/hero_img.png" alt="hero Image" />
+      </div>
+    </div>
+    <div
+      class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-6 mb-10">
+      <div class="bg-white border-none rounded-lg p-5 hover:shadow-2xl">
+        <div class="flex flex-row space-x-4">
+          <div class="p-4 bg-[#E7F0FA] rounded-sm hover:bg-primary">
+            <i class="fa-solid fa-suitcase fa-lg text-primary hover:text-white"></i>
+          </div>
+          <div class="flex flex-col">
+            <h1 class="font-bold text-[24px]">1234</h1>
+            <p class="text-sm">Live Job</p>
+          </div>
+        </div>
+      </div>
+      <!-- ... -->
+      <div class="bg-white border-none rounded-lg p-5 hover:shadow-2xl">
+        <div class="flex flex-row space-x-4">
+          <div class="p-4 bg-[#E7F0FA] rounded-sm hover:bg-primary">
+            <i class="fa-solid fa-suitcase fa-lg text-primary hover:text-white"></i>
+          </div>
+          <div class="flex flex-col">
+            <h1 class="font-bold text-[24px]">10,000</h1>
+            <p class="text-sm">Companies</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border-none rounded-lg p-5 hover:shadow-2xl">
+        <div class="flex flex-row space-x-4">
+          <div class="p-4 bg-[#E7F0FA] rounded-sm hover:bg-primary">
+            <i class="fa-solid fa-suitcase fa-lg text-primary hover:text-white"></i>
+          </div>
+          <div class="flex flex-col">
+            <h1 class="font-bold text-[24px]">10,000</h1>
+            <p class="text-sm">Candidates</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border-none rounded-lg p-5 hover:shadow-2xl">
+        <div class="flex flex-row space-x-4">
+          <div class="p-4 bg-[#E7F0FA] rounded-sm hover:bg-primary">
+            <i class="fa-solid fa-suitcase fa-lg text-primary hover:text-white"></i>
+          </div>
+          <div class="flex flex-col">
+            <h1 class="font-bold text-[24px]">10,000</h1>
+            <p class="text-sm">New Jobs</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- popular vacancies section -->
+    <div class="bg-white">
+      <div class="container mx-auto justify-center items-center pb-12 pt-20">
+        <div class="mb-16">
+          <h2 class="text-2xl mt-10 md:mt-0 font-semibold tracking-wide text-gray-800 md:text-4xl">
+            Most Popular Vacancies
+          </h2>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 cursor-pointer mt-[2rem]">
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+            <div class="p-4 transition-all duration-300 cursor-pointer">
+              <h1 class="text-[17px] font-semibold mb-[0.4rem] hover:text-[#570AF1] hover:border-b-dashed">Anesthesiologist</h1>
+              <p>45904, open positions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- most popular vacancies ends -->
+    
+
+    
+        <script>
+    // Toggle mobile menu
+    document
+      .getElementById("menu-toggle")
+      .addEventListener("click", function () {
+        var menu = document.getElementById("navbar-default");
+        menu.classList.toggle("hidden");
+      });
+  </script>
+
+    <script src="../node_modules/flowbite/dist/flowbite.min.css"></script>
+  </body>
+
+</html>
