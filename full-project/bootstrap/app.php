@@ -16,6 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'employer' => Employer::class,
             'candidate' => Candidate::class,
+            'check.employer.profile' => \App\Http\Middleware\CheckEmployerProfileCompletion::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

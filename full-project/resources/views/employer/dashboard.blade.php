@@ -11,6 +11,12 @@
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
                 </div>
+                @if (session('profile_incomplete'))
+                    <div class="bg-yellow-200 border-l-4 border-yellow-500 text-yellow-700 p-4" role="alert">
+                        <p class="font-bold">Profile Incomplete</p>
+                        <p>{{ session('profile_incomplete') }}</p>
+                    </div>
+                @endif
             </div>
         </div>
     </div>
