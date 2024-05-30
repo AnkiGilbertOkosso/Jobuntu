@@ -33,7 +33,7 @@ class AuthenticatedSessionController extends Controller
         if ($userRole == 2){
             return redirect()->intended(route('employer.dashboard', absolute: false));
         }
-        else 
+        else
         return redirect()->intended(route('candidate.dashboard', absolute: false));
     }
 
