@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobuntu Home page</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/91ebbc8982.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+  
+   body {
+      font-family: "Quicksand", sans-serif;
+
+    }
+   
+  </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Top Bar -->
+    <div
+      class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm bg-gray-100 ">
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-gray-700">Home</a>
+        <a href="#" class="text-primary border-b-2">Find Job</a>
+        <a href="#" class="text-gray-700">Employers</a>
+        <a href="#" class="text-gray-700">Candidates</a>
+        <a href="#" class="text-gray-700">Pricing Plans</a>
+        <a href="#" class="text-gray-700">Customer Supports</a>
+      </div>
+      <div class="flex items-center justify-center space-x-4">
+        <div>
+          <i class="fa-solid fa-phone"></i>
+          <span class="font-medium">+237 620 205 447</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <img src="https://flagcdn.com/w20/us.png"
+            srcset="https://flagcdn.com/w40/us.png 2x" width="20"
+            alt="United States" />
+          <select class="bg-transparent focus:outline-none text-gray-700">
+            <option value="en">
+              <img src="https://flagcdn.com/w20/us.png" alt="Icon" /> English
+            </option>
+            <option value="fr">
+              <img src="path_to_your_icon" alt="Icon" /> French
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar -->
+    <nav class="bg-white py-4 px-4 sticky top-0 z-50">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <img src="../assets/assets/assets/Logo (1).png" alt />
+            <div class="hidden md:flex items-center space-x-2">
+              <div
+                class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+                <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag"
+                  class="w-6 h-4 mr-2" />
+                <select
+                  class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+                  <option value="Cameroon">Cameroon</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <div class="flex items-center border-l border-gray-200 pl-4">
+                  <svg class="w-4 h-4 text-purple-500 mr-2" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                  </svg>
+                  <input type="text" placeholder="Job title, keyword, company"
+                    class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+               <!-- Notification icon -->
+               <div class="relative">
+                <button>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M 12 2 C 11.172 2 10.5 2.672 10.5 3.5 L 10.5 4.1953125 C 7.9131836 4.862095 6 7.2048001 6 10 L 6 16 L 4 18 L 4 19 L 10.269531 19 A 2 2 0 0 0 10 20 A 2 2 0 0 0 12 22 A 2 2 0 0 0 14 20 A 2 2 0 0 0 13.728516 19 L 20 19 L 20 18 L 18 16 L 18 10 C 18 7.2048001 16.086816 4.862095 13.5 4.1953125 L 13.5 3.5 C 13.5 2.672 12.828 2 12 2 z M 12 6 C 14.206 6 16 7.794 16 10 L 16 16 L 16 16.828125 L 16.171875 17 L 7.828125 17 L 8 16.828125 L 8 16 L 8 10 C 8 7.794 9.794 6 12 6 z">
+                    </path>
+                </svg>
+                </button>
+                <!-- Red dot -->
+                <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 right-0"></div>
+            </div>
+            <button>
+            <!-- Avatar image -->
+            <img src="../assets/assets/assets/user.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+   </button> 
+    
+            </div>
+          </div>
+          <div class="md:hidden flex gap-2">
+            <button className="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">Sign In</button>
+            <button data-collapse-toggle="navbar-default" id="menu-toggle"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              aria-controls="navbar-default" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="navbar-default" class="hidden md:hidden">
+        <a href="#" class="block px-4 py-2 text-primary border-b-2">Home</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Find Job</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Employers</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Candidates</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Pricing Plans</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Customer Supports</a>
+    <div class="items-center space-x-2">
+          <div
+            class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+            <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag"
+              class="w-6 h-4 mr-2" />
+            <select
+              class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+              <option value="Cameroon">Cameroon</option>
+              <!-- Add more options as needed -->
+            </select>
+            <div class="flex items-center border-l border-gray-200 pl-4">
+              <svg class="w-4 h-4 text-purple-500 mr-2" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+              </svg>
+              <input type="text" placeholder="Job title, keyword, company"
+                class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
+    </nav>
+     <!-- Nav Bar End -->
+
+    <!-- find-job nav -->
+    <div
+      class="container mx-auto py-3  flex justify-between items-center text-sm bg-[#F1F2F4]">
+      <a href="" class="text-[#18191C] font-bold" style="font-size: 18px;">Job Details</a>
+      <a href="" class="text-[#767F8C]" style="font-size: 14px;" >Home/
+        <span class="text-[#18191C]">Find job/</span>
+        <span class="text-[#18191C]">Graphics & Design/</span>
+        <span class="text-[#18191C]">Job Details</span>
+        <!-- <span class="text-[#18191C]">Find job</span> -->
+      </a>
+      <div class="md:hidden flex space-x-4">
+      <div class="relative flex">
+        <button>
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+            viewBox="0 0 24 24">
+            <path
+                d="M 12 2 C 11.172 2 10.5 2.672 10.5 3.5 L 10.5 4.1953125 C 7.9131836 4.862095 6 7.2048001 6 10 L 6 16 L 4 18 L 4 19 L 10.269531 19 A 2 2 0 0 0 10 20 A 2 2 0 0 0 12 22 A 2 2 0 0 0 14 20 A 2 2 0 0 0 13.728516 19 L 20 19 L 20 18 L 18 16 L 18 10 C 18 7.2048001 16.086816 4.862095 13.5 4.1953125 L 13.5 3.5 C 13.5 2.672 12.828 2 12 2 z M 12 6 C 14.206 6 16 7.794 16 10 L 16 16 L 16 16.828125 L 16.171875 17 L 7.828125 17 L 8 16.828125 L 8 16 L 8 10 C 8 7.794 9.794 6 12 6 z">
+            </path>
+        </svg>
+        </button>
+        <!-- Red dot -->
+        <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 right-0"></div>
+    
+    <!-- Avatar image -->
+    <img src="../assets/assets/assets/user.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+</button> 
+
+    </div>
+  </div>
+    </div>
+
+    <!-- jobdetails -->
+    
+    <div class="bg-white py-6 p-6 px-10" style="border-bottom: 1px solid #EDEFF5;">
+      <div class="flex flex-col md:flex-row gap-4 justify-between items-start">
+        <div class="flex text-nowrap">
+          <img src="../assets/assets/assets/facebook.png" alt="" style="height: 50px; align-self: center;">
+          <div class="text px-4">
+            <h1 class="" style="font-size: 24px; font-weight: 500; line-height: 32px; color: #18191C;margin: 0;">Senior UX Designer</h1>
+            <p style="font-size: 18px; font-weight: 400; line-height: 28px; color: #474C54; margin: 0;">at Facebook
+              <span class='text-[#ffffff]' style="padding: 4px 12px; border-radius: 3px; width: 98px; height: 28px; border: 1px solid #0BA02C; background-color: #0BA02C; font-size: 14px; font-weight: 600; line-height: 20px;">PART-TIME</span>
+              <span class=' ' style="font-size: 14px;color: #E05151; font-weight: 400; line-height: 20px;border: 1px solid #FCEEEE; background: #FCEEEE; border-radius: 4px; width: 59px; height: 20px;">featured</span>
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col items-end">
+          <div class="flex items-center gap-4 mb-4">
+            <p class="text-[#570AF1]" style="display: flex; align-items: center; justify-content: center; height: 24px; width: 24px; border: 1px solid #E4D8FE; padding: 16px; border-radius: 2px; background-color: #E4D8FE;">
+              <i class="fas fa-bookmark"></i>
+            </p>
+            <div class="flex items-center border outline-none py-2 px-4 rounded text-center text-white transition-colors duration-300" style="width: 248px; height: 56px; background-color: #570AF1;">
+              <a href="../src/FeaturedJob.html" class="mr-2 flex items-center justify-center w-full" style="font-size: 16px; line-height: 24px;">
+                Apply Now
+                <i class="fas fa-arrow-right ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="flex md:w-full sm:w-1/2 flex-wrap   justify-between">
+          <div   class="md:w-1/2 sm:w-full">
+            <h3 style="font-size: 18px; font-weight: 500; line-height: 28px; ">Job Description</h3>
+            <div>
+          <p style="font-size: 16px;  font-weight: 400;line-height:24px; color: #5E6670; margin-bottom: 20px;">Velstar is a Shopify Plus agency, and we partner with brands to help them grow, we also do the same with our people!</p>
+          <p style="font-size: 16px; font-weight: 400;line-height:24px; color: #5E6670; margin-bottom: 20px;">Here at Velstar, we don't just make websites, we create exceptional digital experiences that consumers love. Our team of designers, developers, strategists, and creators work together to push brands to the next level. From Platform Migration, User Experience & User Interface Design, to Digital Marketing, we have a proven track record in delivering outstanding eCommerce solutions and driving sales for our clients.</p>
+          <p style="font-size: 16px; font-weight: 400;line-height: 24px; color: #5E6670; margin-bottom: 20px;">The role will involve translating project specifications into clean, test-driven, easily maintainable code. You will work with the Project and Development teams as well as with the Technical Director, adhering closely to project plans and delivering work that meets functional & non-functional requirements. You will have the opportunity to create new, innovative, secure and scalable features for our clients on the Shopify platform</p>
+          <p style="font-size: 16px; font-weight: 400;line-height: 24px; color: #5E6670; margin-bottom: 20px;">Want to work with us? You're in good company!</p>
+          </div>
+          <div  class="mt-10">
+            <h3 style="font-size: 18px; font-weight: 500; line-height: 28px; ">Job Description</h3>
+            <ul>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Great troubleshooting and analytical skills combined with the desire to tackle challenges head-on</li>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">3+ years of experience in back-end development working either with multiple smaller projects simultaneously or large-scale applications.</li>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Experience with HTML, JavaScript, CSS, PHP, Symphony and/or Laravel</li>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Working regularly with APIs and Web Services (REST, GrapthQL, SOAP, etc)</li>
+              <li>Have experience/awareness in Agile application development, commercial off-the-shelf software, middleware, servers and storage, and database management.</li>
+              <li>Familiarity with version control and project management systems (e.g., Github, Jira)
+              </li>
+              <li>Great troubleshooting and analytical skills combined with the desire to tackle challenges head-on</li>
+              <li>Ambitious and hungry to grow your career in a fast-growing agency</li>
+          </ul>
+          
+          </div>
+          <div class="mt-10">
+            <h3 style="font-size: 18px; font-weight: 500; line-height: 28px; ">Desirable</h3>
+            <ul>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Working knowledge of eCommerce platforms, ideally Shopify but also others e.g. Magento, WooCommerce, Visualsoft to enable seamless migrations.</li>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Working knowledge of payment gateways</li>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">API platform experience / Building restful APIs</li>
+          </ul>
+          
+          </div>
+          <div  class="mt-10">
+            <h3 style="font-size: 18px; font-weight: 500; line-height: 28px; ">Benefits</h3>
+            <ul>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">
+                Early finish on Fridays for our end of week catch up (4:30 finish, and drink of your choice from the bar)
+
+              </li>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">28 days holiday (including bank holidays) rising by 1 day per year PLUS an additional day off on your birthday
+              </li>
+              <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">
+                Generous annual bonus</li>
+                <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Healthcare package</li>
+                <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Paid community days to volunteer for a charity of your choice</li>
+                <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">£100 contribution for your own personal learning and development</li>
+                <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Free Breakfast on Mondays and free snacks in the officeAccess to Perkbox with numerous discounts plus free points from the company to spend as you wish.</li>
+                <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Brand new MacBook Pro</li>
+                <li style="font-size: 16px; font-weight: 400; line-height: 24px; color: #5E6670; margin-bottom: 20px;">Joining an agency on the cusp of exponential growth and being part of this exciting story.</li>
+          </ul>
+          
+          </div>
+          
+
+
+        </div>
+        <!-- New Small Boxes under Apply Now and Bookmark -->
+          <div class="sss">
+            <div class="flex items-center w-full md:w-full">
+              <div class="border text-nowrap flex p-7 rounded mb-4 justify-between" style="border-color: #E7F0FA; background-color: white; border: 1px solid #E7F0FA; width: 100%;">
+                  <div class="flex flex-col items-center sm:flex-col sm:items-center justify-center" style="border-right: 1px solid #E7F0FA; padding-right: 20px; margin-right: 20px;">
+                      <h2 class="text-[#18191C] md:items-center sm:items-center" style="font-size: 16px; font-weight: 500; line-height: 24px;">Salary</h2>
+                      <p style="font-size: 20px; font-weight: 500; line-height: 24px; color: #0BA02C;">$100,000 - $120,000</p>
+                      <p style="font-size: 14px; font-weight: 400; line-height: 20px; color: #767F8C;">Yearly salary</p>
+                  </div>
+                  <div class="flex flex-col  items-center justify-center">
+                         <img src="../assets/assets/assets/MapTrifold.png" alt="">
+                      <p style="font-size: 20px; font-weight: 500; line-height: 24px; color:  #18191C;">Job Location</p>
+                      <p style="font-size: 14px; font-weight: 400; line-height: 20px; color: #767F8C;">Dhaka, Bangladesh</p>
+                  </div>
+              </div>
+          </div>
+          
+          
+            <div class="border rounded md:w-full sm:w-fit" style="border-color: #E4E4E4; height: fit-content;" >
+              <div style="border-bottom: 1px solid #E4D8FE; width: 100%; " class="pt-5">
+              <h2 style="font-size: 18px; font-weight: 500; line-height: 28px; color: #18191C;" class="px-4">Job Overview</h2>
+            <div class="grid grid-cols-3 gap-6 mt-5 px-4">
+              <div>
+                <img src="../assets/assets/assets/CalendarBlank.png" alt="">
+                <h2>Job Posted:</h2>
+                <p>14 Jun, 2021</p>
+
+
+              </div>
+              <div>
+                <img src="../assets/assets/assets/CalendarBlank.png" alt="">
+                <h2>Job Posted:</h2>
+                <p>14 Jun, 2021</p>
+
+
+              </div>
+              <div>
+                <img src="../assets/assets/assets/CalendarBlank.png" alt="">
+                <h2>Job Posted:</h2>
+                <p>14 Jun, 2021</p>
+
+
+              </div>
+              <div>
+                <img src="../assets/assets/assets/CalendarBlank.png" alt="">
+                <h2>Job Posted:</h2>
+                <p>14 Jun, 2021</p>
+
+
+              </div>
+              <div>
+                <img src="../assets/assets/assets/CalendarBlank.png" alt="">
+                <h2>Job Posted:</h2>
+                <p>14 Jun, 2021</p>
+
+
+              </div>
+          </div>
+
+        </div>
+        <div class="p-4 mb-4 ">
+          <h2 style="font-size: 18px;font-weight: 500;line-height: 28px; color: #18191C;">Share this job:</h2>
+          <div class="flex gap-4">
+            <div style="padding: 
+            8px, 16px, 8px, 16px; border: 1px solid #E4D8FE; color: 
+#570AF1; background-color: #E4D8FE;">
+            <p>copy links</p>
+            </div>
+            <img src="../assets/assets/assets/Social icon.png" alt="">
+            <img src="../assets/assets/assets/Social icon (1).png" alt="">
+            <img src="../assets/assets/assets/Social icon (2).png" alt="">
+            <img src="../assets/assets/assets/Envelope.png" alt="">
+            
+          </div>
+        </div>
+        </div>
+
+    </div>
+            
+
+          </div>
+          <!-- <div style="border-bottom: 2px solid #E4E4E4;"></div> -->
+    </div>
+    <!-- jobs-section -->
+<div class="py-24 p-6 " style="background-color: white;">
+  <div class="">
+    <h2 class="text-2xl  md:mt-0 font-semibold tracking-wide text-gray-800 md:text-4xl">
+      Related job
+    </h2></div>
+  <div class="container  w-full mx-auto text-nowrap grid grid-cols-1 lg:grid-cols-3 gap-6 px-3 p-6 bg-white">
+           <div class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
+        <h1 class='text-2xl font-semibold mb-1 text-[#18191C]'>Senior UX Designer</h1>
+        <div class="flex space-x-4">
+          <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
+          <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
+        </div>
+        <div class="flex items-center space-x-5" data-aos="fade-up">
+          <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40" alt="Employer Logo" />
+          <div class='flex flex-col w-full'>
+            <div class="flex justify-between items-center w-full">
+              <h1>Googleinc</h1>
+              <span class="ml-auto text-gray-400"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <div class="flex items-center mt-2 text-gray-400">
+              <i class="fas fa-map-marker-alt"></i>
+              <p class="ml-2">Dhaka</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
+        <h1 class='text-2xl font-semibold mb-1 text-[#18191C]'>Techical Support Specialist</h1>
+        <div class="flex space-x-4">
+          <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
+          <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
+        </div>
+        <div class="flex items-center space-x-5" data-aos="fade-up">
+          <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40" alt="Employer Logo" />
+          <div class='flex flex-col w-full'>
+            <div class="flex justify-between items-center w-full">
+              <h1>Googleinc</h1>
+              <span class="ml-auto text-gray-400"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <div class="flex items-center mt-2">
+              <i class="fas fa-map-marker-alt text-gray-400"></i>
+              <p class="ml-2 text-gray-400">Dhaka</p>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <div class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
+        <h1 class='text-2xl font-semibold mb-1 text-[#18191C]'>Senior UX Designer</h1>
+        <div class="flex space-x-4">
+          <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
+          <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
+        </div>
+        <div class="flex items-center space-x-5" data-aos="fade-up">
+          <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40" alt="Employer Logo" />
+          <div class='flex flex-col w-full'>
+            <div class="flex justify-between items-center w-full">
+              <h1>Googleinc</h1>
+              <span class="ml-auto text-gray-400"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <div class="flex items-center mt-2 text-gray-400">
+              <i class="fas fa-map-marker-alt"></i>
+              <p class="ml-2">Dhaka</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
+        <h1 class='text-2xl font-semibold mb-1 text-[#18191C]'>Techical Support Specialist</h1>
+        <div class="flex space-x-4">
+          <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
+          <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
+        </div>
+        <div class="flex items-center space-x-5" data-aos="fade-up">
+          <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40" alt="Employer Logo" />
+          <div class='flex flex-col w-full'>
+            <div class="flex justify-between items-center w-full">
+              <h1>Googleinc</h1>
+              <span class="ml-auto text-gray-400"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <div class="flex items-center mt-2">
+              <i class="fas fa-map-marker-alt text-gray-400"></i>
+              <p class="ml-2 text-gray-400">Dhaka</p>
+            </div>
+          </div>
+        </div>
+      </div>    
+      <div class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
+          <h1 class='text-2xl font-semibold mb-1 text-[#18191C]'>Techical Support Specialist</h1>
+          <div class="flex space-x-4">
+            <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
+            <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
+          </div>
+          <div class="flex items-center space-x-5" data-aos="fade-up">
+            <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40" alt="Employer Logo" />
+            <div class='flex flex-col w-full'>
+              <div class="flex justify-between items-center w-full">
+                <h1>Googleinc</h1>
+                <span class="ml-auto text-gray-400"><i class="fas fa-bookmark"></i></span>
+              </div>
+              <div class="flex items-center mt-2">
+                <i class="fas fa-map-marker-alt text-gray-400"></i>
+                <p class="ml-2 text-gray-400">Dhaka</p>
+              </div>
+            </div>
+          </div>
+        </div>    
+      <div class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
+        <h1 class='text-2xl font-semibold mb-1 text-[#18191C]'>Senior UX Designer</h1>
+        <div class="flex space-x-4">
+          <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
+          <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
+        </div>
+        <div class="flex items-center space-x-5" data-aos="fade-up">
+          <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40" alt="Employer Logo" />
+          <div class='flex flex-col w-full'>
+            <div class="flex justify-between items-center w-full">
+              <h1>Googleinc</h1>
+              <span class="ml-auto text-gray-400"><i class="fas fa-bookmark"></i></span>
+            </div>
+            <div class="flex items-center mt-2 text-gray-400">
+              <i class="fas fa-map-marker-alt"></i>
+              <p class="ml-2">Dhaka</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+</div>
+
+<!-- jobs-end -->
+<!-- footer -->
+
+    
+<footer class="bg-[#18191C]">
+  <div class="mx-auto max-w-screen-xl px-6 py-10 sm:px-6 lg:px-8 mt-24 ">
+    <div class="lg:flex lg:items-start lg:gap-8">
+      <div class="text-teal-600">
+        <a href="" class="text-[#ffffff] text-2xl">
+          JOBUNTU
+        </a>
+      </div>
+
+      <div class="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+        <div class="col-span-2">
+          <div>
+            <h2 class="text-2xl font-bold text-[#ffffff]">Get the latest news!</h2>
+            <p class="mt-4 text-[#ffffff]">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam
+              molestias.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+          <form class="w-full">
+            <label for="UserEmail" class="sr-only">Email</label>
+            <div class="border border-white p-2 focus-within:ring sm:flex sm:items-center sm:gap-4 bg-white">
+              <input
+                type="email"
+                id="UserEmail"
+                placeholder="john@rhcp.com"
+                class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+              />
+              <button class="mt-1 w-full bg-white-500 px-6 border border-gray py-3 text-sm font-bold uppercase tracking-wide text-[#570AF1] transition-none hover:border-[#570AF1] sm:mt-0 sm:w-auto sm:shrink-0">
+                Sign Up
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1">
+          <div class="">
+            <p class="text-[#5E6670]">Call now:
+              <span class="text-[#FFFFFF]">+237 620 205 44</span>
+            </p>
+          </div>
+          <span class="text-[#5E6670]">
+            6391 Elgin St. Celina, Delaware 10299, New York, United States of America
+          </span>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1 text-[#FFFFFF]">
+          <p class="font-medium text-[#FFFFFF]">Quick Link</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">About</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Pricing</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1">
+          <p class="font-medium text-[#ffffff]">Candidate</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">About</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Meet the Team</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Accounts Review</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Live Chat</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1">
+          <p class="font-medium text-[#ffffff]">Employers</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Contact</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">FAQs</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Live Chat</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Live Chat</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-span-2 sm:col-span-1">
+          <p class="font-medium text-[#ffffff]">Support</p>
+          <ul class="mt-6 space-y-4 text-sm">
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Accessibility</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Returns Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Refund Policy</a>
+            </li>
+            <li>
+              <a href="#" class="text-[#9199A3] transition hover:opacity-75">Hiring Statistics</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 border-t border-gray-100 pt-8">
+      <div class="sm:flex sm:justify-between">
+        <p class="text-xs text-[#9199A3]">&copy;2024 Jobuntu - Job Portal. All rights Reserved.</p>
+        <ul class="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-[#9199A3] transition hover:opacity-75">
+              <span class="sr-only">Facebook</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-[#9199A3] transition hover:opacity-75">
+              <span class="sr-only">Instagram</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427C2.013 15.287 2 14.947 2 12.231v-.08c0-2.643.012-2.987.06-4.043.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.933 2.012 9.273 2 11.988 2h.08zm0 1.802h-.08c-2.575 0-2.883.01-3.894.057-.94.043-1.448.196-1.784.327-.452.176-.776.387-1.116.727a3.106 3.106 0 00-.727 1.116c-.131.336-.284.844-.327 1.784-.048 1.011-.057 1.32-.057 3.894v.08c0 2.575.01 2.883.057 3.894.043.94.196 1.448.327 1.784.176.452.387.776.727 1.116.34.34.664.551 1.116.727.336.131.844.284 1.784.327 1.011.048 1.32.057 3.894.057h.08c2.575 0 2.883-.01 3.894-.057.94-.043 1.448-.196 1.784-.327.452-.176.776-.387 1.116-.727.34-.34.551-.664.727-1.116.131-.336.284-.844.327-1.784.048-1.011.057-1.32.057-3.894v-.08c0-2.575-.01-2.883-.057-3.894-.043-.94-.196-1.448-.327-1.784a3.106 3.106 0 00-.727-1.116c-.34-.34-.664-.551-1.116-.727-.336-.131-.844-.284-1.784-.327-1.011-.048-1.32-.057-3.894-.057zm0 5.655a4.514 4.514 0 100 9.029 4.514 4.514 0 000-9.029zm0 1.802a2.712 2.712 0 110 5.424 2.712 2.712 0 010-5.424zm5.148-2.082a1.044 1.044 0 110 2.088 1.044 1.044 0 010-2.088z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" rel="noreferrer" target="_blank" class="text-[#9199A3] transition hover:opacity-75">
+              <span class="sr-only">Twitter</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M8 19c8.837 0 13.675-7.19 13.675-13.675 0-.209 0-.418-.015-.626A9.787 9.787 0 0024 2.557a9.631 9.631 0 01-2.793.765 4.89 4.89 0 002.148-2.703 9.725 9.725 0 01-3.087 1.183 4.864 4.864 0 00-8.325 4.429A13.815 13.815 0 011.671 1.149a4.865 4.865 0 001.506 6.481 4.803 4.803 0 01-2.205-.609v.06a4.868 4.868 0 003.905 4.779 4.899 4.899 0 01-2.2.084 4.87 4.87 0 004.546 3.38A9.774 9.774 0 010 17.54 13.8 13.8 0 007.548 19"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+    
+  </body>
+</html>
+    <!-- find-job nav end -->
