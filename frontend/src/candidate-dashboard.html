@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobuntu Home page</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: "Quicksand", sans-serif;
+        }
+    </style>
+    <style>
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 300px;
+        }
+
+        .inset-l-full {
+            left: 100%;
+        }
+    </style>
+</head>
+
+<body class>
+    <!-- Top Bar -->
+    <div class="bg-gray-100">
+        <div class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm">
+            <div class="flex items-center space-x-4">
+                <a href="/src/index.html" class="text-primary border-b-2">Home</a>
+                <a href="/src/FeaturedJob.html" class="text-gray-700">Find
+                    Job</a>
+                <a href="#" class="text-gray-700">Employers</a>
+                <a href="#" class="text-gray-700">Candidates</a>
+                <a href="#" class="text-gray-700">Pricing Plans</a>
+                <a href="#" class="text-gray-700">Customer Supports</a>
+            </div>
+            <div class="flex items-center justify-center space-x-4">
+                <div>
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="font-medium">+237 620 205 447</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" width="20"
+                        alt="United States" />
+                    <select class="bg-transparent focus:outline-none text-gray-700">
+                        <option value="en">
+                            <img src="https://flagcdn.com/w20/us.png" alt="Icon" />
+                            English
+                        </option>
+                        <option value="fr">
+                            <img src="path_to_your_icon" alt="Icon" />
+                            French
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar -->
+    <nav class="border-b bg-white py-4 px-4 sticky top-0 z-50">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <img src="/assets/logo.png" alt />
+                    <div class="hidden md:flex items-center space-x-2">
+                        <div
+                            class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+                            <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag" class="w-6 h-4 mr-2" />
+                            <select class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+                                <option value="Cameroon">Cameroon</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <div class="flex items-center border-l border-gray-200 pl-4">
+                                <svg class="w-4 h-4 text-purple-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                                </svg>
+                                <input type="text" placeholder="Job title, keyword, company"
+                                    class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <!-- Notification icon -->
+                        <div class="relative">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M 12 2 C 11.172 2 10.5 2.672 10.5 3.5 L 10.5 4.1953125 C 7.9131836 4.862095 6 7.2048001 6 10 L 6 16 L 4 18 L 4 19 L 10.269531 19 A 2 2 0 0 0 10 20 A 2 2 0 0 0 12 22 A 2 2 0 0 0 14 20 A 2 2 0 0 0 13.728516 19 L 20 19 L 20 18 L 18 16 L 18 10 C 18 7.2048001 16.086816 4.862095 13.5 4.1953125 L 13.5 3.5 C 13.5 2.672 12.828 2 12 2 z M 12 6 C 14.206 6 16 7.794 16 10 L 16 16 L 16 16.828125 L 16.171875 17 L 7.828125 17 L 8 16.828125 L 8 16 L 8 10 C 8 7.794 9.794 6 12 6 z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <!-- Red dot -->
+                            <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 right-0"></div>
+                        </div>
+                        <button>
+                            <!-- Avatar image -->
+                            <img src="/assets/assets/assets/user.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+                        </button>
+
+                    </div>
+                </div>
+                <div class="md:hidden flex gap-2">
+                    <button className="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">Sign
+                        In</button>
+                    <button data-collapse-toggle="navbar-default" id="menu-toggle" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                        aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="navbar-default" class="hidden md:hidden">
+            <a href="#" class="block px-4 py-2 text-primary border-b-2">Home</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Find Job</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Employers</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Candidates</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Pricing Plans</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Customer
+                Supports</a>
+            <div class="items-center space-x-2">
+                <div class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+                    <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag" class="w-6 h-4 mr-2" />
+                    <select class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+                        <option value="Cameroon">Cameroon</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    <div class="flex items-center border-l border-gray-200 pl-4">
+                        <svg class="w-4 h-4 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                        </svg>
+                        <input type="text" placeholder="Job title, keyword, company"
+                            class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Nav Bar End -->
+
+    <!-- Dashboard -->
+    <div class="container mx-auto flex">
+
+        <!-- Sidebar -->
+        <div class="w-1/4 relative h-screen bg-white p-4 rounded border-r hidden md:block">
+            <span class="text-[12px] text-gray-400 font-medium">EMPLOYER
+                DASHBOARD</span>
+            <ul class="space-y-2 pt-4">
+                <li><a href="employer.html" class="flex p-2 bg-blue-100 text-primary rounded border-l-4 border-primary"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#570AF1">
+                            <path
+                                d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z" />
+                        </svg>
+                        <span class="pl-3">Overview</span></a></li>
+                <li><a href="../src/appliedjobs.html" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="rgb(55 65 81)">
+                                <path
+                                    d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm240-600h160v-80H400v80Zm400 360H600v80H360v-80H160v160h640v-160Zm-360 0h80v-80h-80v80Zm-280-80h200v-80h240v80h200v-200H160v200Zm320 40Z" />
+                            </svg>
+                        <span class="pl-3">Applied Jobs</span></a></li>
+                <li><a href="post-job.html" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded">
+                    <svg viewBox="0 0 24 24" fill="none" width="24px" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.07989 3 8.2 3H15.8C16.9201 3 17.4802 3 17.908 3.21799C18.2843 3.40973 18.5903 3.71569 18.782 4.09202C19 4.51984 19 5.07989 19 6.2V21L12 16L5 21V6.2Z" stroke="rgb(55 65 81 )" stroke-width="2" stroke-linejoin="round"></path> </g></svg>
+                        <span class="pl-3">Favorite Job</span></a></li>
+                <li><a href="my-jobs.html" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded">
+                    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24px" fill="rgb(55 65 81 / var(--tw-text-opacity))" stroke=""><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>notification-on</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <g> <path d="M40.2,26.2A4.5,4.5,0,0,1,39,23.3V19c0-8.1-5.4-15-15-15S9,10.7,9,19v5a2.6,2.6,0,0,1-.7,1.7L4.6,29.4A2,2,0,0,0,4,30.8V38a2,2,0,0,0,2,2H17.1a7,7,0,0,0,13.8,0H42a2,2,0,0,0,2-2V30.8a2,2,0,0,0-.6-1.4ZM40,36H8V31.7l3.1-3.2A6.4,6.4,0,0,0,13,24V19c0-5.3,2.9-11,11-11s11,5.9,11,11v4.3A8.6,8.6,0,0,0,37.3,29L40,31.7Z"></path> <path d="M7,19A17.1,17.1,0,0,1,13.5,5.6a2,2,0,0,0,.4-2.8,2,2,0,0,0-2.8-.3A20.6,20.6,0,0,0,3,19a2,2,0,0,0,4,0Z"></path> <path d="M36.9,2.4a2,2,0,0,0-2.8.4,2,2,0,0,0,.4,2.8A16.9,16.9,0,0,1,41,19a2,2,0,0,0,4,0A20.9,20.9,0,0,0,36.9,2.4Z"></path> </g> </g> </g> </g></svg>
+                        <span class="pl-3">Jobs Alert</span></a></li>
+                <li><a href="#" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                        </svg><span class="pl-3">Setting</span></a></li>
+                <li><a href="#" class="absolute bottom-0 flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                        </svg><span class="pl-3">Log-out</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 px-5">
+
+            <!-- Overview -->
+            <div class="pt-14">
+                <div class="flex flex-col items-start justify-self-start mb-6 space-y-2">
+                    <h1 class="text-2xl font-semibold">Hello, Esther Howard</h1>
+                    <p class="text-gray-700">Here is your daily activities
+                        and application</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class=" flex flex-row items-center justify-between p-5 bg-blue-100 rounded-lg">
+                        <div class="text-start">
+                            <p class="text-2xl font-semibold">589</p>
+                            <p>Applied Jobs</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                                fill="#570AF1">
+                                <path
+                                    d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm240-600h160v-80H400v80Zm400 360H600v80H360v-80H160v160h640v-160Zm-360 0h80v-80h-80v80Zm-280-80h200v-80h240v80h200v-200H160v200Zm320 40Z" />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class=" flex flex-row items-center justify-between p-5 bg-orange-100 rounded-lg">
+                        <div class="text-start">
+                            <p class="text-2xl font-semibold">238</p>
+                            <p>Favorite Jobs</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg">
+                            <svg viewBox="0 0 24 24" fill="none" width="24px" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 6.2C5 5.07989 5 4.51984 5.21799 4.09202C5.40973 3.71569 5.71569 3.40973 6.09202 3.21799C6.51984 3 7.07989 3 8.2 3H15.8C16.9201 3 17.4802 3 17.908 3.21799C18.2843 3.40973 18.5903 3.71569 18.782 4.09202C19 4.51984 19 5.07989 19 6.2V21L12 16L5 21V6.2Z" stroke="#ffa500" stroke-width="2" stroke-linejoin="round"></path> </g></svg>
+                        </div>
+                    </div>
+                    <div class=" flex flex-row items-center justify-between p-5 bg-green-100 rounded-lg">
+                        <div class="text-start">
+                            <p class="text-2xl font-semibold">578</p>
+                            <p>Jobs Alert</p>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg">
+                            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="24px" fill="rgb(220 252 231)" stroke="rgb(220 252 231)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>notification-on</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <g> <path d="M40.2,26.2A4.5,4.5,0,0,1,39,23.3V19c0-8.1-5.4-15-15-15S9,10.7,9,19v5a2.6,2.6,0,0,1-.7,1.7L4.6,29.4A2,2,0,0,0,4,30.8V38a2,2,0,0,0,2,2H17.1a7,7,0,0,0,13.8,0H42a2,2,0,0,0,2-2V30.8a2,2,0,0,0-.6-1.4ZM40,36H8V31.7l3.1-3.2A6.4,6.4,0,0,0,13,24V19c0-5.3,2.9-11,11-11s11,5.9,11,11v4.3A8.6,8.6,0,0,0,37.3,29L40,31.7Z"></path> <path d="M7,19A17.1,17.1,0,0,1,13.5,5.6a2,2,0,0,0,.4-2.8,2,2,0,0,0-2.8-.3A20.6,20.6,0,0,0,3,19a2,2,0,0,0,4,0Z"></path> <path d="M36.9,2.4a2,2,0,0,0-2.8.4,2,2,0,0,0,.4,2.8A16.9,16.9,0,0,1,41,19a2,2,0,0,0,4,0A20.9,20.9,0,0,0,36.9,2.4Z"></path> </g> </g> </g> </g></svg>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-red-100 text-red-600 p-4 rounded mb-6">
+                    Your profile editing is not completed. Complete your
+                    profile editing & build your custom Resume.
+                </div>
+
+                <div class="flex flex-row items-start justify-between mb-4">
+                    <h2 class="text-xl font-semibold items-center justify-center">Recently
+                        Posted Jobs</h2>
+                    <div class="flex justify-between items-center text-[#570AF1] ">
+                        <a href class="mr-2">View all</a>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </div>
+                <section class="container mx-auto">
+                    <div class="flex flex-col">
+                        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                                <div class="overflow-hidden border border-gray-200 md:rounded-lg">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr class>
+                                                <th scope="col"
+                                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                                    JOBS
+                                                </th>
+                                                <th scope="col"
+                                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 text-nowrap">
+                                                    Date Applied
+                                                </th>
+
+                                                <th scope="col"
+                                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                                    STATUS
+                                                </th>
+
+                                                <!-- <th scope="col"
+                                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                                    APPLICAITON
+                                                </th> -->
+
+                                                <th scope="col"
+                                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500">
+                                                    ACTIONS
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                    <div class="flex gap-3">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" aria-label="Upwork" role="img" viewBox="0 0 512 512" width="50px"
+                                                            height="50px" fill="#000000">
+                                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                                            <g id="SVGRepo_iconCarrier">
+                                                                <rect width="512" height="512" rx="15%" fill="#6fda44"></rect>
+                                                                <path fill="#ffffff"
+                                                                    d="M357.2,296.9c-17,0-33-7.2-47.4-18.9l3.5-16.6l0.1-.6c3.2-17.6,13.1-47.2,43.8-47.2c23,0,41.7,18.7,41.7,41.7S380.2,296.9,357.2,296.9L357.2,296.9z M357.2,171.4c-39.2,0-69.5,25.4-81.9,67.3c-18.8-28.3-33.1-62.2-41.4-90.8h-42.2v109.7c0,21.7-17.6,39.3-39.3,39.3s-39.3-17.6-39.3-39.3V147.8H71v109.7c0,44.9,36.5,81.8,81.4,81.8s81.4-36.9,81.4-81.8v-18.4c8.2,17.1,18.2,34.4,30.4,49.6l-25.8,121.4h43.1l18.7-88c16.4,10.5,35.2,17.1,56.8,17.1c46.2,0,83.8-37.8,83.8-84.1C440.9,209,403.4,171.4,357.2,171.4"></path>
+                                                            </g>
+                                                        </svg>
+                                            
+                                                        <div class="flex flex-col ml-4">
+                                                            <div class="flex items-center gap-4">
+                                                                <h3 class="font-semibold">Networking Engineer</h3>
+                                                                <p class="text-blue-400 border rounded-lg"
+                                                                    style="color: blue; border: 1px solid lightblue; background-color: lightblue;">Remote</p>
+                                                            </div>
+                                                            <div class="flex gap-4">
+                                            
+                                                            <div class="flex items-center gap-1 mt-1">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <p class="text-sm font-normal">Washington</p>
+                                                            </div>
+                                            
+                                                            <div class="flex items-center gap-1 text-gray-500">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 8.5V8.35417C18 6.50171 16.4983 5 14.6458 5H9.5C7.567 5 6 6.567 6 8.5C6 10.433 7.567 12 9.5 12H14.5C16.433 12 18 13.567 18 15.5C18 17.433 16.433 19 14.5 19H9.42708C7.53436 19 6 17.4656 6 15.5729V15.5M12 3V21" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <span class="text-sm font-normal">$50k-80k/month</span>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            
+                                            
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div>
+
+                                                        <h2 class="text-sm font-normal">Feb 2, 2019 19:28</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div
+                                                        class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor"
+                                                                stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg>
+
+                                                        <h2 class="text-sm font-normal">Active</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div class="grid grid-cols-3 gap-4 justify-between items-center">
+                                                        <div class="col-span-2">
+                                                            <a href="#"
+                                                                class="text-blue-600 font-semibold rounded-md bg-slate-100 px-12 py-4 hover:bg-primary hover:text-white">View
+                                                                Details</a>
+                                                        </div> 
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                    <div class="flex gap-3">
+                                                        <svg fill="#000000" height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M0,0v512h512V0H0z M265.1,142.1c9.4-11.4,25.4-20.1,39.1-21.1c2.3,15.6-4.1,30.8-12.5,41.6c-9,11.6-24.5,20.5-39.5,20 C249.6,167.7,256.6,152.4,265.1,142.1z M349.4,339.9c-10.8,16.4-26,36.9-44.9,37.1c-16.8,0.2-21.1-10.9-43.8-10.8 c-22.7,0.1-27.5,11-44.3,10.8c-18.9-0.2-33.3-18.7-44.1-35.1c-30.2-46-33.4-99.9-14.7-128.6c13.2-20.4,34.1-32.3,53.8-32.3 c20,0,32.5,11,49.1,11c16,0,25.8-11,48.9-11c17.5,0,36,9.5,49.2,26c-43.2,23.7-36.2,85.4,7.5,101.9 C360,322.1,357.1,328.1,349.4,339.9z"></path> </g></svg>
+                                            
+                                                        <div class="flex flex-col ml-4">
+                                                            <div class="flex items-center gap-4">
+                                                                <h3 class="font-semibold">Software Engineer</h3>
+                                                                <p class="text-blue-400 border rounded-lg"
+                                                                    style="color: blue; border: 1px solid lightblue; background-color: lightblue;">Full-TiME</p>
+                                                            </div>
+                                                            <div class="flex gap-4">
+                                            
+                                                            <div class="flex items-center gap-1 mt-1">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <p class="text-sm font-normal">Brazil</p>
+                                                            </div>
+                                            
+                                                            <div class="flex items-center gap-1 text-gray-500">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 8.5V8.35417C18 6.50171 16.4983 5 14.6458 5H9.5C7.567 5 6 6.567 6 8.5C6 10.433 7.567 12 9.5 12H14.5C16.433 12 18 13.567 18 15.5C18 17.433 16.433 19 14.5 19H9.42708C7.53436 19 6 17.4656 6 15.5729V15.5M12 3V21" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <span class="text-sm font-normal">$50k-80k/month</span>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            
+                                            
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div>
+
+                                                        <h2 class="text-sm font-normal">Dec 2, 2023 17:28</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div
+                                                        class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor"
+                                                                stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg>
+
+                                                        <h2 class="text-sm font-normal">Active</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div class="grid grid-cols-3 gap-4 justify-between items-center">
+                                                        <div class="col-span-2">
+                                                            <a href="#"
+                                                                class="text-blue-600 font-semibold rounded-md bg-slate-100 px-12 py-4 hover:bg-primary hover:text-white">View
+                                                                Details</a>
+                                                        </div> 
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                    <div class="flex gap-3">
+                                                        <svg width="50px" height="50px" viewBox="-3.2 -3.2 38.40 38.40" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-3.2" y="-3.2" width="38.40" height="38.40" rx="0" fill="#fff" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M26.5002 14.9996C27.8808 14.9996 29 13.8804 29 12.4998C29 11.1192 27.8807 10 26.5001 10C25.1194 10 24 11.1193 24 12.5V14.9996H26.5002ZM19.5 14.9996C20.8807 14.9996 22 13.8803 22 12.4996V5.5C22 4.11929 20.8807 3 19.5 3C18.1193 3 17 4.11929 17 5.5V12.4996C17 13.8803 18.1193 14.9996 19.5 14.9996Z" fill="#2EB67D"></path> <path d="M5.49979 17.0004C4.11919 17.0004 3 18.1196 3 19.5002C3 20.8808 4.1193 22 5.49989 22C6.8806 22 8 20.8807 8 19.5V17.0004H5.49979ZM12.5 17.0004C11.1193 17.0004 10 18.1197 10 19.5004V26.5C10 27.8807 11.1193 29 12.5 29C13.8807 29 15 27.8807 15 26.5V19.5004C15 18.1197 13.8807 17.0004 12.5 17.0004Z" fill="#E01E5A"></path> <path d="M17.0004 26.5002C17.0004 27.8808 18.1196 29 19.5002 29C20.8808 29 22 27.8807 22 26.5001C22 25.1194 20.8807 24 19.5 24L17.0004 24L17.0004 26.5002ZM17.0004 19.5C17.0004 20.8807 18.1197 22 19.5004 22L26.5 22C27.8807 22 29 20.8807 29 19.5C29 18.1193 27.8807 17 26.5 17L19.5004 17C18.1197 17 17.0004 18.1193 17.0004 19.5Z" fill="#ECB22E"></path> <path d="M14.9996 5.49979C14.9996 4.11919 13.8804 3 12.4998 3C11.1192 3 10 4.1193 10 5.49989C10 6.88061 11.1193 8 12.5 8L14.9996 8L14.9996 5.49979ZM14.9996 12.5C14.9996 11.1193 13.8803 10 12.4996 10L5.5 10C4.11929 10 3 11.1193 3 12.5C3 13.8807 4.11929 15 5.5 15L12.4996 15C13.8803 15 14.9996 13.8807 14.9996 12.5Z" fill="#36C5F0"></path> </g></svg>
+                                            
+                                                        <div class="flex flex-col ml-4">
+                                                            <div class="flex items-center gap-4">
+                                                                <h3 class="font-semibold">Junior Graphic Designer</h3>
+                                                                <p class="text-blue-400 border rounded-lg"
+                                                                    style="color: blue; border: 1px solid lightblue; background-color: lightblue;">Temporary</p>
+                                                            </div>
+                                                            <div class="flex gap-4">
+                                            
+                                                            <div class="flex items-center gap-1 mt-1">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <p class="text-sm font-normal">New York</p>
+                                                            </div>
+                                            
+                                                            <div class="flex items-center gap-1 text-gray-500">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 8.5V8.35417C18 6.50171 16.4983 5 14.6458 5H9.5C7.567 5 6 6.567 6 8.5C6 10.433 7.567 12 9.5 12H14.5C16.433 12 18 13.567 18 15.5C18 17.433 16.433 19 14.5 19H9.42708C7.53436 19 6 17.4656 6 15.5729V15.5M12 3V21" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <span class="text-sm font-normal">$50k-80k/month</span>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            
+                                            
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div>
+
+                                                        <h2 class="text-sm font-normal">Jan 8, 2024 05:28</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div
+                                                        class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor"
+                                                                stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg>
+
+                                                        <h2 class="text-sm font-normal">Active</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div class="grid grid-cols-3 gap-4 justify-between items-center">
+                                                        <div class="col-span-2">
+                                                            <a href="#"
+                                                                class="text-blue-600 font-semibold rounded-md bg-slate-100 px-12 py-4 hover:bg-primary hover:text-white">View
+                                                                Details</a>
+                                                        </div> 
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                                    <div class="flex gap-3">
+                                                        <svg width="50px" height="50px" viewBox="-4.8 -4.8 57.60 57.60" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-4.8" y="-4.8" width="57.60" height="57.60" rx="0" fill="#1DA1F2" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="24" cy="24" r="20" fill="#1DA1F2"></circle> <path fill-rule="evenodd" clip-rule="evenodd" d="M36 16.3086C35.1177 16.7006 34.1681 16.9646 33.1722 17.0838C34.1889 16.4742 34.9697 15.5095 35.3368 14.36C34.3865 14.9247 33.3314 15.3335 32.2107 15.5551C31.3123 14.5984 30.0316 14 28.6165 14C25.8975 14 23.6928 16.2047 23.6928 18.9237C23.6928 19.3092 23.7368 19.6852 23.8208 20.046C19.7283 19.8412 16.1005 17.8805 13.6719 14.9015C13.2479 15.6287 13.0055 16.4742 13.0055 17.3766C13.0055 19.0845 13.8735 20.5916 15.1958 21.4747C14.3878 21.4491 13.6295 21.2275 12.9647 20.8587V20.9203C12.9647 23.3066 14.663 25.296 16.9141 25.7496C16.5013 25.8616 16.0661 25.9224 15.6174 25.9224C15.2998 25.9224 14.991 25.8912 14.6902 25.8336C15.3166 27.7895 17.1357 29.2134 19.2899 29.2534C17.6052 30.5733 15.4822 31.3612 13.1751 31.3612C12.7767 31.3612 12.3848 31.338 12 31.2916C14.1791 32.6884 16.7669 33.5043 19.5475 33.5043C28.6037 33.5043 33.5562 26.0016 33.5562 19.4956C33.5562 19.282 33.5522 19.0693 33.5418 18.8589C34.5049 18.1629 35.34 17.2958 36 16.3086Z" fill="white"></path> </g></svg>
+                                            
+                                                        <div class="flex flex-col ml-4">
+                                                            <div class="flex items-center gap-4">
+                                                                <h3 class="font-semibold">Marketing Officer</h3>
+                                                                <p class="text-blue-400 border rounded-lg"
+                                                                    style="color: blue; border: 1px solid lightblue; background-color: lightblue;">Contract base</p>
+                                                            </div>
+                                                            <div class="flex gap-4">
+                                            
+                                                            <div class="flex items-center gap-1 mt-1">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <p class="text-sm font-normal">Dhaka</p>
+                                                            </div>
+                                            
+                                                            <div class="flex items-center gap-1 text-gray-500">
+                                                                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="rgb(107 114 128)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 8.5V8.35417C18 6.50171 16.4983 5 14.6458 5H9.5C7.567 5 6 6.567 6 8.5C6 10.433 7.567 12 9.5 12H14.5C16.433 12 18 13.567 18 15.5C18 17.433 16.433 19 14.5 19H9.42708C7.53436 19 6 17.4656 6 15.5729V15.5M12 3V21" stroke="" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                                                <span class="text-sm font-normal">$50k-80k/month</span>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            
+                                            
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div>
+
+                                                        <h2 class="text-sm font-normal">jun 2, 2019 19:28</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div
+                                                        class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60">
+                                                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M10 3L4.5 8.5L2 6" stroke="currentColor"
+                                                                stroke-width="1.5" stroke-linecap="round"
+                                                                stroke-linejoin="round" />
+                                                        </svg>
+
+                                                        <h2 class="text-sm font-normal">Active</h2>
+                                                    </div>
+                                                </td>
+                                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                                    <div class="grid grid-cols-3 gap-4 justify-between items-center">
+                                                        <div class="col-span-2">
+                                                            <a href="#"
+                                                                class="text-blue-600 font-semibold rounded-md bg-slate-100 px-12 py-4 hover:bg-primary hover:text-white">View
+                                                                Details</a>
+                                                        </div> 
+                                                    </div>
+                                                </td>
+                                                
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <footer class="border-t">
+        <div class="items-center justify-center">
+            <h3 class="text-sm text-gray-400 text-center py-4">©2024
+                Jobuntu - Job Portal. All rights Reserved.</h3>
+        </div>
+    </footer>
+    <script>
+        // Toggle mobile menu
+        document
+            .getElementById("menu-toggle")
+            .addEventListener("click", function () {
+                var menu = document.getElementById("navbar-default");
+                menu.classList.toggle("hidden");
+            });
+    </script>
+
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+</body>
+
+</html>
