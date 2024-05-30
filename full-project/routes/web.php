@@ -16,6 +16,7 @@ Route::get('/candidate/dashboard', function () {
 // Employer
 Route::middleware(['auth', 'verified', 'employer', 'check.employer.profile'])->group(function () {
     Route::get('employer/dashboard', [EmployerController::class, 'dashboard'])->name('employer.dashboard');
+    Route::get('employer/profile/complete', [EmployerController::class, 'showCompleteProfileForm'])->name('employer.completeProfileForm');
     Route::post('employer/profile/complete', [EmployerController::class, 'completeProfile'])->name('employer.completeProfile');
 });
 

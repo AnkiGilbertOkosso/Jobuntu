@@ -4,7 +4,7 @@
     <div class="pt-14">
         @if (session('profile_incomplete'))
             <div class="bg-red-100 text-red-600 p-4 rounded mb-6">
-                Your profile editing is not completed. {{ session('profile_incomplete') }}
+                Your profile is not completed. {{ session('profile_incomplete') }} <a href="{{ route('employer.completeProfileForm') }}" class="underline ">Here</a>
             </div>
         @endif
         <div class="flex flex-col items-start justify-self-start mb-6 space-y-2">

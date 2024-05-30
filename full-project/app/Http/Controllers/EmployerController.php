@@ -15,6 +15,13 @@ class EmployerController extends Controller
         return view('employer.dashboard', compact('employer'));
     }
 
+    public function showCompleteProfileForm()
+    {
+        $employer = Auth::user()->employer;
+
+        return view('employer.complete_profile', compact('employer'));
+    }
+
     public function completeProfile(Request $request)
     {
         $request->validate([
