@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\EmployerController;
+use App\Http\Controllers\JobListingController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,9 +20,13 @@ Route::middleware(['auth', 'verified', 'candidate', 'check.candidate.profile'])-
 
 // Employer
 Route::middleware(['auth', 'verified', 'employer', 'check.employer.profile'])->group(function () {
-    Route::get('employer/dashboard', [EmployerController::class, 'dashboard'])->name('employer.dashboard');
-    Route::get('employer/profile/complete', [EmployerController::class, 'showCompleteProfileForm'])->name('employer.completeProfileForm');
-    Route::post('employer/profile/complete', [EmployerController::class, 'completeProfile'])->name('employer.completeProfile');
+    Route::get('company/dashboard', [EmployerController::class, 'dashboard'])->name('employer.dashboard');
+    Route::get('company/profile/complete', [EmployerController::class, 'showCompleteProfileForm'])->name('employer.completeProfileForm');
+    Route::post('company/profile/complete', [EmployerController::class, 'completeProfile'])->name('employer.completeProfile');
+
+    // Joblisting
+    Route::get('/company/jobs/create',[ JobListingController::class, 'create'])->name('jobs.create');
+    Route::post('/company/jobs/store',[ JobListingController::class, 'store'])->name('jobs.store');
 });
 
 Route::middleware('auth')->group(function () {

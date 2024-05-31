@@ -19,18 +19,20 @@ class CheckCandidateProfileCompletion
         if (Auth::check() && Auth::user()->role == 1) {
             $candidate = Auth::user()->candidate;
 
-
             if (!$candidate) {
                 session()->flash('profile_incomplete', 'Please complete your profile.');
-            }
-            if (!$candidate->Resume || !$candidate->Skills || !$candidate->Experience || !$candidate->Education ||
-                !$candidate->nationality || !$candidate->gender || !$candidate->biography || !$candidate->profile_picture ||
-                !$candidate->marital_status || !$candidate->date_of_birth || !$candidate->social_link || !$candidate->phone ||
-                !$candidate->email || !$candidate->location) {
+            } else {
+                if (!$candidate->Resume || !$candidate->Skills || !$candidate->Experience || !$candidate->Education ||
+                    !$candidate->nationality || !$candidate->gender || !$candidate->biography || !$candidate->profile_picture ||
+                    !$candidate->marital_status || !$candidate->date_of_birth || !$candidate->social_link || !$candidate->phone ||
+                    !$candidate->email || !$candidate->location) {
 
-                session()->flash('profile_incomplete', 'Please complete your profile.');
+                    session()->flash('profile_incomplete', 'Please complete your profile.');
+                }
             }
         }
+
         return $next($request);
+
     }
 }

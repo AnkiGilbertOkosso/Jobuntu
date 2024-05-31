@@ -1,38 +1,40 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', 'Jobuntu') }}</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
-        <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
+    <title>{{ config('app.name', 'Jobuntu') }}</title>
 
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
 
-        <style>
-            body {
-                font-family: "Quicksand", sans-serif;
-            }
-        </style>
-        <style>
-            th:nth-child(1),
-            td:nth-child(1) {
-                width: 300px;
-            }
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-            .inset-l-full {
-                left: 100%;
-            }
-        </style>
-    </head>
-    <body>
-            @include('layouts.employer.navbar')
+    <style>
+        body {
+            font-family: "Quicksand", sans-serif;
+        }
+    </style>
+    <style>
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 300px;
+        }
+
+        .inset-l-full {
+            left: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    @include('layouts.employer.navbar')
 
     <!-- Dashboard -->
     <div class="container mx-auto flex">
@@ -53,11 +55,91 @@
         // Toggle mobile menu
         document
             .getElementById("menu-toggle")
-            .addEventListener("click", function () {
+            .addEventListener("click", function() {
                 var menu = document.getElementById("navbar-default");
                 menu.classList.toggle("hidden");
             });
     </script>
+    <script>
+        function toggleSelection(button, checkboxId) {
+            button.classList.toggle("bg-primary");
+            button.classList.toggle("text-white");
 
-    </body>
+            var checkbox = document.getElementById(checkboxId);
+            checkbox.checked = !checkbox.checked;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const countrySelect = document.getElementById('country');
+            const citySelect = document.getElementById('city');
+
+            countrySelect.addEventListener('change', function() {
+                const selectedCountry = countrySelect.value;
+
+                // Clear previous city options
+                citySelect.innerHTML = '<option value="">Select...</option>';
+
+                if (selectedCountry) {
+                    fetch(`https://countriesnow.space/api/v0.1/countries/cities`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                country: selectedCountry
+                            }),
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.error === false) {
+                                data.data.forEach(function(city) {
+                                    const option = document.createElement('option');
+                                    option.value = city;
+                                    option.textContent = city;
+                                    citySelect.appendChild(option);
+                                });
+                            } else {
+                                console.error('Error fetching cities:', data.msg);
+                            }
+                        })
+                        .catch(error => console.error('Error fetching cities:', error));
+                }
+            });
+        });
+    </script>
+    <script>
+        const tagsInput = document.getElementById('tagsInput');
+        const tagsContainer = document.getElementById('tagsContainer');
+        const hiddenTagsInput = document.getElementById('hiddenTagsInput');
+        let tagsArray = [];
+
+        function addTag(tag) {
+            // Create the tag element
+            const tagElement = document.createElement('span');
+            tagElement.textContent = tag.trim();
+            tagElement.classList.add('bg-blue-100', 'text-blue-800', 'text-sm', 'font-semibold', 'mr-2', 'px-2.5', 'py-0.5',
+                'rounded');
+
+            // Append the tag element to the tags container
+            tagsContainer.appendChild(tagElement);
+
+            // Update the tags array and hidden input value
+            tagsArray.push(tag.trim());
+            hiddenTagsInput.value = tagsArray.join(',');
+        }
+
+        // Event listener for keypress
+        tagsInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                const tag = tagsInput.value.trim();
+                if (tag) {
+                    addTag(tag);
+                    tagsInput.value = '';
+                }
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+
 </html>

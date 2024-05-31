@@ -19,6 +19,7 @@ class EmployerController extends Controller
     {
         $employer = Auth::user()->employer;
 
+
         return view('employer.complete_profile', compact('employer'));
     }
 
@@ -40,7 +41,14 @@ class EmployerController extends Controller
             'email' => 'required|string|email|max:255',
         ]);
 
-        $employer = Auth::user()->employer;
+
+        $user = Auth::user();
+
+        if ($user->role != 2) {
+            return redirect()->back()->withErrors(['msg' => 'Unauthorized action.']);
+        }
+
+        $employer = $user->employer ?? new Employer();
 
         if ($request->hasFile('logo')) {
             $logoPath = $request->file('logo')->store('logos', 'public');
@@ -59,12 +67,13 @@ class EmployerController extends Controller
         $employer->team_size = $request->input('team_size');
         $employer->year_of_establishment = $request->input('year_of_establishment');
         $employer->company_website = $request->input('company_website');
-        $employer->company_vision = $request->input('company_vision');
         $employer->social_links = json_encode($request->input('social_links'));
         $employer->map_location = $request->input('map_location');
         $employer->phone = $request->input('phone');
         $employer->email = $request->input('email');
 
+        $employer->user()->associate($user);
+        
         $employer->save();
 
         return redirect()->route('employer.dashboard')->with('success', 'Profile completed successfully.');

@@ -112,11 +112,11 @@
                             </div>
                         </div>
                         <h2 class="text-2xl font-semibold mb-6">Company Info</h2>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="grid grid-cols-1 space-y-4 mb-6">
                             <div>
                                 <label for="company_name" class="block text-gray-700 font-semibold mb-2">Company
                                     Name</label>
-                                <input type="text" id="company_name" name="company_name" value=""
+                                <input type="text" id="company_name" name="company_name"
                                     class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                             </div>
                             <div>
@@ -125,11 +125,24 @@
                                     class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary"></textarea>
                             </div>
                         </div>
-                        <button type="button"
-                        class="next action-button w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Next</button>
+                        <div class="items-end justify-end flex">
+                            <button type="button"
+                                class="next action-button w-full md:w-1/4 px-4  py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Next</button>
+                        </div>
+                    </div>
                 </fieldset>
-                <fieldset class="step hidden">
+                <fieldset class="step my-12 hidden">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div>
+                            <label for="organization_type" class="block text-gray-700 font-semibold mb-2">Organization Type</label>
+                            <input type="text" id="organization_type" name="organization_type" value=""
+                                class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="industry_types" class="block text-gray-700 font-semibold mb-2">Industry Type</label>
+                            <input type="text" id="industry_types" name="industry_types" value=""
+                                class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
+                        </div>
                         <div>
                             <label for="team_size" class="block text-gray-700 font-semibold mb-2">Team
                                 Size</label>
@@ -153,13 +166,15 @@
                                 class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                         </div>
                     </div>
-                    <button type="button"
+                    <div class="items-center justify-between flex">
+                        <button type="button"
                             class="prev action-button w-full md:w-1/4 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700 transition duration-300">Previous</button>
-                    <button type="button"
-                        class="next action-button w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Next</button>
+                        <button type="button"
+                            class="next action-button w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Next</button>
+                    </div>
                 </fieldset>
                 <fieldset class="step hidden">
-                    <div class="py-12 w-full">
+                    <div class="my-12 w-full">
                         <h2 class="text-2xl font-semibold mb-6">Social Media Profile</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
@@ -193,10 +208,12 @@
                                     class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                             </div>
                         </div>
-                        <button type="button"
-                            class="prev action-button w-full md:w-1/4 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700 transition duration-300">Previous</button>
-                        <button type="button"
-                            class="next action-button w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Next</button>
+                        <div class="items-center justify-between flex">
+                            <button type="button"
+                                class="prev action-button w-full md:w-1/4 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700 transition duration-300">Previous</button>
+                            <button type="button"
+                                class="next action-button w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Next</button>
+                        </div>
                     </div>
                 </fieldset>
                 <fieldset class="step hidden">
@@ -204,14 +221,14 @@
                         <h2 class="text-2xl font-semibold mb-6">Contact</h2>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
-                                <label for="map_location" class="block text-gray-700 font-semibold mb-2">Map
+                                <label for="map_location" class="block text-gray-700 font-semibold mb-2">
                                     Location</label>
                                 <input type="text" id="map_location" name="map_location" value=""
                                     class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                             </div>
                             <div>
                                 <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone</label>
-                                <input type="text" id="phone" name="phone" value=""
+                                <input type="mo" id="phone" name="phone" value=""
                                     class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                             </div>
                         </div>
@@ -222,17 +239,19 @@
                                     class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                             </div>
                         </div>
-                        <button type="button"
-                            class="prev action-button w-full md:w-1/4 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700 transition duration-300">Previous</button>
-                        <button type="submit"
-                            class="w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Submit</button>
+                        <div class="items-center justify-between flex">
+                            <button type="button"
+                                class="prev action-button w-full md:w-1/4 px-4 py-2 bg-gray-500 text-white rounded-lg hover:bg-gray-700 transition duration-300">Previous</button>
+                            <button type="submit"
+                                class="w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Submit</button>
+                        </div>
                     </div>
                 </fieldset>
             </div>
         </form>
     </main>
 
-    <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    {{-- <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script> --}}
     <script>
         const dropzoneFileInput = document.getElementById('dropzone-file');
         const imagePreview = document.getElementById('image-preview');

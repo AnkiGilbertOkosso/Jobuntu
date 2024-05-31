@@ -20,7 +20,7 @@
                                     d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
                             </svg>
                             <input type="text" placeholder="Job title, Keyword..."
-                                class="flex-grow text-gray-700 outline-none" />
+                                class="flex-grow text-gray-700" />
                         </div>
 
                         <div class="flex items-center pl-4 pr-4 border-l">
@@ -32,7 +32,7 @@
                                     stroke-linejoin="round" />
                             </svg>
                             <input type="text" placeholder="Your Location"
-                                class="flex-grow text-gray-700 outline-none" />
+                                class="flex-grow text-gray-700"/>
                         </div>
                         <div class="flex items-center">
                             <button type="submit"
@@ -186,7 +186,7 @@
                     Popular Category
                 </h2>
                 <div
-                    class="flex justify-between md:mt-5 items-center border outline-none text-[#570AF1] py-2 px-4 rounded hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                    class="flex justify-between md:mt-5 items-center border text-[#570AF1] py-2 px-4 rounded hover:bg-blue-500 hover:text-white transition-colors duration-300">
                     <a href="" class="mr-2">View all</a>
                     <i class="fas fa-arrow-right"></i>
                 </div>
@@ -336,7 +336,7 @@
                     Featured job
                 </h2>
                 <div
-                    class="flex justify-between md:mt-5 items-center border outline-none text-[#570AF1] py-2 px-4 rounded hover:bg-blue-500 hover:text-white transition-colors duration-300">
+                    class="flex justify-between md:mt-5 items-center border text-[#570AF1] py-2 px-4 rounded hover:bg-blue-500 hover:text-white transition-colors duration-300">
                     <a href="../src/FeaturedJob.html" class="mr-2">View all</a>
                     <i class="fas fa-arrow-right"></i>
                 </div>

@@ -12,8 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/91ebbc8982.js"
-      crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -49,10 +48,10 @@
     <!-- Top Bar -->
     <div class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm">
         <div class="flex items-center space-x-4">
-            <a href="/src/index.html" class="text-primary border-b-2">Home</a>
+            <a href="{{ route('home') }}" class="text-primary border-b-2">Home</a>
             <a href="/src/FeaturedJob.html" class="text-gray-700">Find Job</a>
-            <a href="#" class="text-gray-700">Employers</a>
-            <a href="#" class="text-gray-700">Candidates</a>
+            <a href="{{ route('employer.dashboard') }}" class="text-gray-700">Employers</a>
+            <a href="{{ route('candidate.dashboard') }}" class="text-gray-700">Candidates</a>
             <a href="#" class="text-gray-700">Pricing Plans</a>
             <a href="#" class="text-gray-700">Customer Supports</a>
         </div>
@@ -82,7 +81,9 @@
         <div class="container mx-auto">
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-6">
-                    <img src="/assets/logo.png" alt />
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('/assets/logo.png') }}" alt />
+                    </a>
                     <div class="hidden md:flex items-center space-x-2">
                         <div
                             class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
@@ -106,7 +107,7 @@
 
                 <div class="hidden md:flex items-center space-x-4">
                     <div class="flex items-center space-x-2">
-                        <a href="login.html"
+                        <a href="{{ route('register') }}"
                             class="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">
                             Sign In
                         </a>
