@@ -55,7 +55,7 @@
             <img class="object-cover w-full h-full max-w-2xl rounded-md" src="/assets/hero_img.png" alt="hero Image" />
         </div>
     </div>
-    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 px-6 mb-10">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-6  mb-10">
         <div class="bg-white border-none rounded-lg p-5 hover:shadow-2xl">
             <div class="flex flex-row space-x-4">
                 <div class="p-4 bg-[#E7F0FA] rounded-sm hover:bg-primary">
@@ -106,7 +106,7 @@
 
     <!-- popular vacancies section -->
     <div class="bg-white">
-        <div class="container mx-auto justify-center items-center pb-12 pt-20 px-6">
+        <div class="container mx-auto justify-center items-center pb-12 pt-20 ">
             <div class="mb-16">
                 <h2 class="text-2xl mt-10 md:mt-0 font-semibold tracking-wide text-gray-800 md:text-4xl">
                     Most Popular Vacancies
@@ -180,8 +180,8 @@
     <!-- most popular vacancies ends -->
     <!-- Category Section -->
     <div class="bg-white">
-        <div class="px-6 mb-10 pt-20 pb-12  border-b border-gray-200">
-            <div class="flex flex-row items-center justify-between mb-16 px-6">
+        <div class="container mx-auto px-4 md:px-0 pt-20 pb-12  border-b border-gray-200">
+            <div class="flex flex-row items-center justify-between mb-16 ">
                 <h2 class="text-2xl  md:mt-0 font-semibold tracking-wide text-gray-800 md:text-4xl">
                     Popular Category
                 </h2>
@@ -191,7 +191,7 @@
                     <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 mb-10 text-nowrap">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6  mb-10 text-nowrap">
                 <!-- Category Item -->
                 <div class="bg-white border-none rounded-lg p-5 hover:shadow-5xl cursor-pointer">
                     <div class="flex flex-row space-x-4">
@@ -330,8 +330,8 @@
     <!-- Category Section End -->
     <!-- featured jobs start -->
     <div class="bg-white">
-        <div class="">
-            <div class="flex flex-row items-center justify-between mb-16 px-6">
+        <div class="container px-4 md:px-0 mx-auto pt-12">
+            <div class="flex flex-row items-center justify-between mb-16 ">
                 <h2 class="text-2xl  md:mt-0 font-semibold tracking-wide text-gray-800 md:text-4xl">
                     Featured job
                 </h2>
@@ -682,14 +682,14 @@
 
     <!-- Top-Companies Starts Here -->
     <div class="bg-white">
-        <div class="container mx-auto justify-center items-center pb-10 pt-20 px-6">
+        <div class="container mx-auto px-4 md:px-0 justify-center items-center pb-10 pt-20 ">
             <div class="">
                 <h2 class="text-2xl mt-10 md:mt-0 font-semibold tracking-wide text-gray-800 md:text-4xl">
                     Most Popular Vacancies
                 </h2>
             </div>
         </div>
-        <div class="mt-12 relative container w-[100%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+        <div class="mt-12 relative container w-[100%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 ">
             <div
                 class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
                 <div class="flex items-center space-x-3">
@@ -891,4 +891,31 @@
         </div>
 
     </div>
+    <!-- Banner -->
+    <div class="bg-white items-center justify-center py-12">
+        <div class="container px-4 md:px-0 mx-auto items-center justify-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-3 px-8 py-10 rounded-3xl bg-cover bg-no-repeat object-cover"
+                    style="background-image: url('../assets/assets/assets/banner.png');">
+                    <div class="col-span-2 flex flex-col items-start space-y-4  text-white">
+                        <h2 class="font-semibold text-4xl">Become an Employer</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur accusantium minus, </p>
+                        <button class="bg-white rounded-sm text-primary px-4 py-3 font-semibold">Register Now</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 px-8 py-10 rounded-3xl bg-no-repeat bg-left"
+                    style="background-image: url('../assets/assets/assets/banner.png');">
+                    <div class="col-span-2 flex flex-col items-start space-y-4  text-white">
+                        <h2 class="font-semibold text-4xl">Become an Employer</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur accusantium minus, </p>
+                        <button class="bg-white rounded-sm text-primary px-4 py-3 font-semibold">Register Now</button>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner end -->
 </x-web-layout>
