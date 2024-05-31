@@ -31,6 +31,16 @@
             left: 100%;
         }
     </style>
+    <style>
+        .active {
+            display: block;
+        }
+
+        .tab-link.active {
+            border-bottom: 2px solid blue;
+            color: blue;
+        }
+    </style>
 </head>
 
 <body class>
@@ -65,19 +75,22 @@
             });
     </script>
     <script>
-        function openTab(evt, tabName, role) {
+        function openTab(event, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
             for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.add("hidden");
+                tabcontent[i].classList.remove("active");
             }
             tablinks = document.getElementsByClassName("tab-link");
             for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" border-blue-500", "");
+                tablinks[i].classList.remove("active");
+                tablinks[i].style.color = "gray";
             }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " border-blue-500";
-            document.getElementById("role").value = role;
+            document.getElementById(tabName).classList.remove("hidden");
+            document.getElementById(tabName).classList.add("active");
+            event.currentTarget.classList.add("active");
+            event.currentTarget.style.color = "blue";
         }
     </script>
 
