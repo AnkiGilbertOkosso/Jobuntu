@@ -13,6 +13,13 @@ class CandidateController extends Controller
 
         return view('candidate.dashboard', compact('candidate'));
     }
+
+    public function setting()
+    {
+        $candidate = Auth::user()->candidate;
+
+        return view('candidate.setting', compact('candidate'));
+    }
     public function showCompleteProfileForm()
     {
         $candidate = Auth::user()->candidate;

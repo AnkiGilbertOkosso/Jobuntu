@@ -15,6 +15,7 @@ Route::middleware(['auth', 'verified', 'candidate', 'check.candidate.profile'])-
     Route::get('/candidate/dashboard', [CandidateController::class, 'dashboard'])->name('candidate.dashboard');
     Route::get('candidate/profile/complete', [CandidateController::class, 'showCompleteProfileForm'])->name('candidate.completeProfileForm');
     Route::post('candidate/profile/complete', [CandidateController::class, 'saveProfileStep'])->name('candidate.saveProfileStep');
+    Route::get('candidate/setting', [CandidateController::class, 'setting'])->name('candidate.setting');
 });
 
 
