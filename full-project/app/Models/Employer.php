@@ -9,10 +9,29 @@ class Employer extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'user_id', 'company_name', 'logo', 'banner_image', 'about_us', 'organisation_type',
-        'industry_type', 'team_size', 'year_of_establishment', 'company_website',
-        'facebook_link', 'instagram_link', 'linkedin_link', 'twitter_link',
-        'contact_number', 'contact_email',
+        'logo',
+        'banner_image',
+        'company_name',
+        'about_us',
+        'organization_type',
+        'industry_types',
+        'team_size',
+        'year_of_establishment',
+        'company_website',
+        'social_links',
+        'map_location',
+        'phone',
+        'email',
+    ];
+
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'social_links' => 'array',
+        'year_of_establishment' => 'date',
     ];
 
     public function user()

@@ -336,7 +336,6 @@
             });
     </script>
 
-    <script src="../node_modules/flowbite/dist/flowbite.min.css"></script>
 </body>
 
 </html>

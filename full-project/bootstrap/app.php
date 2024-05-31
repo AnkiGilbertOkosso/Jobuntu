@@ -17,6 +17,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'employer' => Employer::class,
             'candidate' => Candidate::class,
             'check.employer.profile' => \App\Http\Middleware\CheckEmployerProfileCompletion::class,
+            'check.candidate.profile' => \App\Http\Middleware\CheckCandidateProfileCompletion::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

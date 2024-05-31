@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CandidateController;
 use App\Http\Controllers\EmployerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -9,9 +10,12 @@ Route::get('/', function () {
 })->name('home');
 
 // Candidate
-Route::get('/candidate/dashboard', function () {
-    return view('candidate.dashboard');
-})->middleware(['auth', 'verified', 'candidate'])->name('candidate.dashboard');
+Route::middleware(['auth', 'verified', 'candidate', 'check.candidate.profile'])->group(function () {
+    Route::get('/candidate/dashboard', [CandidateController::class, 'dashboard'])->name('candidate.dashboard');
+    Route::get('candidate/profile/complete', [CandidateController::class, 'showCompleteProfileForm'])->name('candidate.completeProfileForm');
+    Route::post('candidate/profile/complete', [CandidateController::class, 'saveProfileStep'])->name('candidate.saveProfileStep');
+});
+
 
 // Employer
 Route::middleware(['auth', 'verified', 'employer', 'check.employer.profile'])->group(function () {
