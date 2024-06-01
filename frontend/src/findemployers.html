@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobuntu Home page</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/91ebbc8982.js"
+      crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+  
+   body {
+      font-family: "Quicksand", sans-serif;
+
+    }
+    .pagination-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.pagination-arrow, .pagination-number {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination-arrow:hover, .pagination-number:hover {
+    background-color: #ddd;
+}
+
+.pagination-number.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+  </style>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- Top Bar -->
+    <div
+      class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm bg-gray-100 ">
+      <div class="flex items-center space-x-4">
+        <a href="#" class="text-gray-700">Home</a>
+        <a href="#" class="text-primary border-b-2">Find Job</a>
+        <a href="#" class="text-gray-700">Employers</a>
+        <a href="#" class="text-gray-700">Candidates</a>
+        <a href="#" class="text-gray-700">Pricing Plans</a>
+        <a href="#" class="text-gray-700">Customer Supports</a>
+      </div>
+      <div class="flex items-center justify-center space-x-4">
+        <div>
+          <i class="fa-solid fa-phone"></i>
+          <span class="font-medium">+237 620 205 447</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <img src="https://flagcdn.com/w20/us.png"
+            srcset="https://flagcdn.com/w40/us.png 2x" width="20"
+            alt="United States" />
+          <select class="bg-transparent focus:outline-none text-gray-700">
+            <option value="en">
+              <img src="https://flagcdn.com/w20/us.png" alt="Icon" /> English
+            </option>
+            <option value="fr">
+              <img src="path_to_your_icon" alt="Icon" /> French
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar -->
+    <nav class="bg-white py-4 px-4 sticky top-0 z-50">
+      <div class="container mx-auto">
+        <div class="flex justify-between items-center">
+          <div class="flex items-center space-x-6">
+            <img src="../assets/logo.png" alt />
+            <div class="hidden md:flex items-center space-x-2">
+              <div
+                class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+                <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag"
+                  class="w-6 h-4 mr-2" />
+                <select
+                  class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+                  <option value="Cameroon">Cameroon</option>
+                  <!-- Add more options as needed -->
+                </select>
+                <div class="flex items-center border-l border-gray-200 pl-4">
+                  <svg class="w-4 h-4 text-purple-500 mr-2" fill="none"
+                    stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                  </svg>
+                  <input type="text" placeholder="Job title, keyword, company"
+                    class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hidden md:flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+               <!-- Notification icon -->
+               <div class="relative">
+                <button>
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M 12 2 C 11.172 2 10.5 2.672 10.5 3.5 L 10.5 4.1953125 C 7.9131836 4.862095 6 7.2048001 6 10 L 6 16 L 4 18 L 4 19 L 10.269531 19 A 2 2 0 0 0 10 20 A 2 2 0 0 0 12 22 A 2 2 0 0 0 14 20 A 2 2 0 0 0 13.728516 19 L 20 19 L 20 18 L 18 16 L 18 10 C 18 7.2048001 16.086816 4.862095 13.5 4.1953125 L 13.5 3.5 C 13.5 2.672 12.828 2 12 2 z M 12 6 C 14.206 6 16 7.794 16 10 L 16 16 L 16 16.828125 L 16.171875 17 L 7.828125 17 L 8 16.828125 L 8 16 L 8 10 C 8 7.794 9.794 6 12 6 z">
+                    </path>
+                </svg>
+                </button>
+                <!-- Red dot -->
+                <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 right-0"></div>
+            </div>
+            <button>
+            <!-- Avatar image -->
+            <img src="../assets/assets/assets/user.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+   </button> 
+    
+            </div>
+          </div>
+          <div class="md:hidden flex gap-2">
+            <button className="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">Sign In</button>
+            <button data-collapse-toggle="navbar-default" id="menu-toggle"
+              type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              aria-controls="navbar-default" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round"
+                  stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="navbar-default" class="hidden md:hidden">
+        <a href="#" class="block px-4 py-2 text-primary border-b-2">Home</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Find Job</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Employers</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Candidates</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Pricing Plans</a>
+        <a href="#" class="block px-4 py-2 text-gray-700">Customer Supports</a>
+    <div class="items-center space-x-2">
+          <div
+            class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+            <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag"
+              class="w-6 h-4 mr-2" />
+            <select
+              class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+              <option value="Cameroon">Cameroon</option>
+              <!-- Add more options as needed -->
+            </select>
+            <div class="flex items-center border-l border-gray-200 pl-4">
+              <svg class="w-4 h-4 text-purple-500 mr-2" fill="none"
+                stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+              </svg>
+              <input type="text" placeholder="Job title, keyword, company"
+                class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+            </div>
+          </div>
+        </div>
+
+       
+      </div>
+    </nav>
+     <!-- Nav Bar End -->
+
+    <!-- find-job nav -->
+    <div
+      class="container mx-auto py-3  flex justify-between items-center text-sm bg-[#F1F2F4]">
+      <a href="" class="text-[#18191C] font-bold" style="font-size: 18px;">FIND Employers </a>
+      <a href="" class="text-[#767F8C]" style="font-size: 14px;" >Home/
+        <span class="text-[#18191C]">Find Employers</span>
+      </a>
+      <div class="md:hidden flex space-x-4">
+      <div class="relative">
+        <button>
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+            viewBox="0 0 24 24">
+            <path
+                d="M 12 2 C 11.172 2 10.5 2.672 10.5 3.5 L 10.5 4.1953125 C 7.9131836 4.862095 6 7.2048001 6 10 L 6 16 L 4 18 L 4 19 L 10.269531 19 A 2 2 0 0 0 10 20 A 2 2 0 0 0 12 22 A 2 2 0 0 0 14 20 A 2 2 0 0 0 13.728516 19 L 20 19 L 20 18 L 18 16 L 18 10 C 18 7.2048001 16.086816 4.862095 13.5 4.1953125 L 13.5 3.5 C 13.5 2.672 12.828 2 12 2 z M 12 6 C 14.206 6 16 7.794 16 10 L 16 16 L 16 16.828125 L 16.171875 17 L 7.828125 17 L 8 16.828125 L 8 16 L 8 10 C 8 7.794 9.794 6 12 6 z">
+            </path>
+        </svg>
+        </button>
+        <!-- Red dot -->
+        <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 right-0"></div>
+    </div>
+    <button>
+    <!-- Avatar image -->
+    <img src="/assets/assets/assets/user.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+</button> 
+
+    </div>
+  </div>
+
+    </div>
+    <!-- find-job nav end -->
+
+<!-- jobs-section -->
+<div class="py-3 bg-[white]">
+    <div class="container p-2">
+        <div class="block md:flex border py-4 md:py-2 space-y-6 md:space-y-0 rounded-lg shadow-lg bg-white w-11/12 mx-auto "> 
+            <div class="flex items-center flex-grow px-4"> 
+                <svg class="text-purple-500 mr-2" width="50" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                </svg>
+                <input type="text" placeholder="Search by: Job tittle, Position, Keyword..." class="flex-grow text-gray-700 outline-none" />
+            </div>
+            <div class="flex items-center border-l flex-grow px-4">
+                <svg class="mr-2" width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 10C19 17 10 23 10 23C10 23 1 17 1 10C1 7.61305 1.94821 5.32387 3.63604 3.63604C5.32387 1.94821 7.61305 1 10 1C12.3869 1 14.6761 1.94821 16.364 3.63604C18.0518 5.32387 19 7.61305 19 10Z" stroke="#570AF1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input type="text" placeholder="City, state or zip code" class="flex-grow text-gray-700 outline-none" />
+            </div>
+            <div class="flex items-center flex-grow px-4 space-x-2">
+                <button>
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#767F8C"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 3V7M12 17V21M3 12H7M17 12H21M12 12H12.01M19 12C19 15.866 15.866 19 12 19C8.13401 19 5 15.866 5 12C5 8.13401 8.13401 5 12 5C15.866 5 19 8.13401 19 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                </button>
+                <button class="flex items-center justify-center text-[#18191C] bg-[#F1F2F4] border-[#F1F2F4] font-medium rounded-md text-md px-8 py-3 text-nowrap w-full gap-3">
+                    <svg fill="#000000" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="filter-alt" class="icon glyph"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,9a3.66,3.66,0,0,0,1-.13V21a1,1,0,0,1-2,0V8.87A3.66,3.66,0,0,0,12,9Z"></path><path d="M19,16a3.66,3.66,0,0,0,1-.13V21a1,1,0,0,1-2,0V15.87A3.66,3.66,0,0,0,19,16Z"></path><path d="M20,3V8.13a3.91,3.91,0,0,0-2,0V3a1,1,0,0,1,2,0Z"></path><path d="M6,3V15.13A3.66,3.66,0,0,0,5,15a3.66,3.66,0,0,0-1,.13V3A1,1,0,0,1,6,3Z"></path><path d="M8,19a3,3,0,1,1-4-2.82,2.87,2.87,0,0,1,2,0A3,3,0,0,1,8,19Z"></path><path d="M15,5a3,3,0,0,1-2,2.82,2.87,2.87,0,0,1-2,0A3,3,0,1,1,15,5Z"></path><path d="M22,12a3,3,0,0,1-2,2.82,2.87,2.87,0,0,1-2,0,3,3,0,0,1,0-5.64,2.87,2.87,0,0,1,2,0A3,3,0,0,1,22,12Z"></path></g></svg>
+                    <a href="filters.html">
+                    Filter
+                    </a>
+
+                </button>
+                <button type="submit" class="text-white bg-primary font-medium rounded-md text-md px-4 py-3 w-full text-nowrap">
+                    FIND JOBS
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Top-Companies Starts Here -->
+  <div class="bg-white">
+    <div class="container mx-auto justify-center items-center pb-5 pt-5 px-6">
+      <div class=" flex space-x-4">
+        <h2 class=" md:mt-0   text-gray-800 ">
+        popular searches:
+        </h2>
+        <span>front-end</span>
+        <span>Back-end</span>
+        <span>development</span>
+        <span>PHP</span>
+        <span>Laravel</span>
+        <span>Bootstrap</span>
+        <span>Developer</span>
+        <span>Team Lead</span>
+        <span>Product Testing</span>
+        <span>Javascript</span>
+        <span>Team lead</span>
+      </div>
+    </div>
+    <div class=" relative container w-[100%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 px-6 pt-5 pb-5">
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+      <div
+        class="p-7 mb-6 border-2 rounded-lg hover:shadow-2xl hover:scale-110 transition-all duration-700 border-opacity-10 border-gray-500">
+        <div class="flex items-center space-x-3">
+          <img src="../assets/assets/assets/dribble.png" alt="job" width="40" height="40" />
+          <!-- Content -->
+          <div class='flex flex-col'>
+            <div class='flex gap-3 items-center'>
+              <h1 class='text-17px font-bold mb-0.4rem text-[#191F33]'>Dribble</h1>
+              <span class='text-[#E05151] border border-[#FCEEEE] rounded bg-[#FCEEEE]'>featured</span>
+            </div>
+            <div class='flex items-center space-x-2'>
+              <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
+              <p class="ml-2" style="color: #767F8C;">Dhaka, Bangladesh</p>
+            </div>
+          </div>
+        </div>
+        <!-- Button -->
+        <button
+          class="mt-4 bg-[#E7F0FA] border-[#E7F0FA] text-[#570AF1] rounded-md py-2 w-full hover:bg- hover:border-[#E7F0FA] transition-colors duration-300">
+          Open Position (3)
+        </button>
+      </div>
+    </div>
+
+  </div>
+      
+      <!-- Pagination -->
+      <div class="flex justify-center mt-2 bg-white">
+        <div class="inline-flex">
+          <a href="#" class="inline-flex items-center justify-center w-10 h-10 text-sm hover:border  hover:rounded-full mx-1 text-[#99C2FF] hover:text-[#570AF1] hover:bg-[#E7F0FA]">
+            <!-- <i class="fas fa-chevron-left"></i> -->
+            <i class="fa-solid fa-arrow-left"></i>
+          </a>
+          <a href="#" class="inline-flex items-center justify-center w-10 h-10 text-sm border text-[#5E6670] border-[#F1F2F4] rounded-full mx-1 hover:text-white hover:bg-[#570AF1]">01</a>
+          <a href="#" class="inline-flex items-center justify-center w-10 h-10 text-sm border text-[#5E6670] border-[#F1F2F4] rounded-full mx-1 hover:text-white hover:bg-[#570AF1]">02</a>
+          <a href="#" class="inline-flex items-center justify-center w-10 h-10 text-sm border text-[#5E6670] border-[#F1F2F4] rounded-full mx-1 hover:text-white hover:bg-[#570AF1]">03</a>
+          <a href="#" class="inline-flex items-center justify-center w-10 h-10 text-sm border text-[#5E6670] border-[#F1F2F4] rounded-full mx-1 hover:text-white hover:bg-[#570AF1]">04</a>
+          <a href="#" class="inline-flex items-center justify-center w-10 h-10 text-sm border text-[#5E6670] border-[#F1F2F4] rounded-full mx-1 hover:text-white hover:bg-[#570AF1]">05</a>
+          <a href="#" class="inline-flex items-center justify-center w-10 h-10 text-sm hover:border  hover:rounded-full mx-1 text-[#99C2FF] hover:text-[#570AF1] hover:bg-[#E7F0FA]">
+            <!-- <i class="fas fa-chevron-right"></i> -->
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+       
+</div>
+<!-- jobs-end -->
+<!-- footer -->
+<footer class="bg-[#18191C]">
+    <div class="mx-auto max-w-screen-xl px-6 py-10 sm:px-6 lg:px-8  ">
+      <div class="lg:flex lg:items-start lg:gap-8">
+        <div class="text-teal-600">
+          <a href="" class="text-[#ffffff] text-2xl">
+            JOBUNTU
+          </a>
+        </div>
+  
+        <div class="mt-8 grid grid-cols-2 gap-8 lg:mt-0 lg:grid-cols-5 lg:gap-y-16">
+          <div class="col-span-2">
+            <div>
+              <h2 class="text-2xl font-bold text-[#ffffff]">Get the latest news!</h2>
+              <p class="mt-4 text-[#ffffff]">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non cupiditate quae nam
+                molestias.
+              </p>
+            </div>
+          </div>
+  
+          <div class="col-span-2 lg:col-span-3 lg:flex lg:items-end">
+            <form class="w-full">
+              <label for="UserEmail" class="sr-only">Email</label>
+              <div class="border border-white p-2 focus-within:ring sm:flex sm:items-center sm:gap-4 bg-white">
+                <input
+                  type="email"
+                  id="UserEmail"
+                  placeholder="john@rhcp.com"
+                  class="w-full border-none focus:border-transparent focus:ring-transparent sm:text-sm"
+                />
+                <button class="mt-1 w-full bg-white-500 px-6 border border-gray py-3 text-sm font-bold uppercase tracking-wide text-[#570AF1] transition-none hover:border-[#570AF1] sm:mt-0 sm:w-auto sm:shrink-0">
+                  Sign Up
+                </button>
+              </div>
+            </form>
+          </div>
+  
+          <div class="col-span-2 sm:col-span-1">
+            <div class="">
+              <p class="text-[#5E6670]">Call now:
+                <span class="text-[#FFFFFF]">+237 620 205 44</span>
+              </p>
+            </div>
+            <span class="text-[#5E6670]">
+              6391 Elgin St. Celina, Delaware 10299, New York, United States of America
+            </span>
+          </div>
+  
+          <div class="col-span-2 sm:col-span-1 text-[#FFFFFF]">
+            <p class="font-medium text-[#FFFFFF]">Quick Link</p>
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">About</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Pricing</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Blog</a>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-[#ffffff]">Candidate</p>
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">About</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Meet the Team</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Accounts Review</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Live Chat</a>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-[#ffffff]">Employers</p>
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">FAQs</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Live Chat</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Live Chat</a>
+              </li>
+            </ul>
+          </div>
+  
+          <div class="col-span-2 sm:col-span-1">
+            <p class="font-medium text-[#ffffff]">Support</p>
+            <ul class="mt-6 space-y-4 text-sm">
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Accessibility</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Returns Policy</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Refund Policy</a>
+              </li>
+              <li>
+                <a href="#" class="text-[#9199A3] transition hover:opacity-75">Hiring Statistics</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <div class="mt-8 border-t border-gray-100 pt-8">
+        <div class="sm:flex sm:justify-between">
+          <p class="text-xs text-[#9199A3]">&copy;2024 Jobuntu - Job Portal. All rights Reserved.</p>
+          <ul class="col-span-2 flex justify-start gap-6 lg:col-span-5 lg:justify-end">
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-[#9199A3] transition hover:opacity-75">
+                <span class="sr-only">Facebook</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-[#9199A3] transition hover:opacity-75">
+                <span class="sr-only">Instagram</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427C2.013 15.287 2 14.947 2 12.231v-.08c0-2.643.012-2.987.06-4.043.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.933 2.012 9.273 2 11.988 2h.08zm0 1.802h-.08c-2.575 0-2.883.01-3.894.057-.94.043-1.448.196-1.784.327-.452.176-.776.387-1.116.727a3.106 3.106 0 00-.727 1.116c-.131.336-.284.844-.327 1.784-.048 1.011-.057 1.32-.057 3.894v.08c0 2.575.01 2.883.057 3.894.043.94.196 1.448.327 1.784.176.452.387.776.727 1.116.34.34.664.551 1.116.727.336.131.844.284 1.784.327 1.011.048 1.32.057 3.894.057h.08c2.575 0 2.883-.01 3.894-.057.94-.043 1.448-.196 1.784-.327.452-.176.776-.387 1.116-.727.34-.34.551-.664.727-1.116.131-.336.284-.844.327-1.784.048-1.011.057-1.32.057-3.894v-.08c0-2.575-.01-2.883-.057-3.894-.043-.94-.196-1.448-.327-1.784a3.106 3.106 0 00-.727-1.116c-.34-.34-.664-.551-1.116-.727-.336-.131-.844-.284-1.784-.327-1.011-.048-1.32-.057-3.894-.057zm0 5.655a4.514 4.514 0 100 9.029 4.514 4.514 0 000-9.029zm0 1.802a2.712 2.712 0 110 5.424 2.712 2.712 0 010-5.424zm5.148-2.082a1.044 1.044 0 110 2.088 1.044 1.044 0 010-2.088z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" rel="noreferrer" target="_blank" class="text-[#9199A3] transition hover:opacity-75">
+                <span class="sr-only">Twitter</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 19c8.837 0 13.675-7.19 13.675-13.675 0-.209 0-.418-.015-.626A9.787 9.787 0 0024 2.557a9.631 9.631 0 01-2.793.765 4.89 4.89 0 002.148-2.703 9.725 9.725 0 01-3.087 1.183 4.864 4.864 0 00-8.325 4.429A13.815 13.815 0 011.671 1.149a4.865 4.865 0 001.506 6.481 4.803 4.803 0 01-2.205-.609v.06a4.868 4.868 0 003.905 4.779 4.899 4.899 0 01-2.2.084 4.87 4.87 0 004.546 3.38A9.774 9.774 0 010 17.54 13.8 13.8 0 007.548 19"/>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script src="/src/js/index.js">
+    // Toggle mobile menu
+   
+    
+  </script>
+
+
+    
+  </body>
+  </html>
+  
+

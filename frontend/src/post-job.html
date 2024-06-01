@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jobuntu Home page</title>
+    <link href="./output.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <style>
+        body {
+            font-family: "Quicksand", sans-serif;
+        }
+    </style>
+    <style>
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 300px;
+        }
+
+        .inset-l-full {
+            left: 100%;
+        }
+    </style>
+</head>
+
+<body class>
+    <!-- Top Bar -->
+    <div class="bg-gray-100">
+        <div class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm">
+            <div class="flex items-center space-x-4">
+                <a href="/src/index.html" class="text-primary border-b-2">Home</a>
+                <a href="/src/FeaturedJob.html" class="text-gray-700">Find
+                    Job</a>
+                <a href="#" class="text-gray-700">Employers</a>
+                <a href="#" class="text-gray-700">Candidates</a>
+                <a href="#" class="text-gray-700">Pricing Plans</a>
+                <a href="#" class="text-gray-700">Customer Supports</a>
+            </div>
+            <div class="flex items-center justify-center space-x-4">
+                <div>
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="font-medium">+237 620 205 447</span>
+                </div>
+                <div class="flex items-center justify-center">
+                    <img src="https://flagcdn.com/w20/us.png" srcset="https://flagcdn.com/w40/us.png 2x" width="20"
+                        alt="United States" />
+                    <select class="bg-transparent focus:outline-none text-gray-700">
+                        <option value="en">
+                            <img src="https://flagcdn.com/w20/us.png" alt="Icon" />
+                            English
+                        </option>
+                        <option value="fr">
+                            <img src="path_to_your_icon" alt="Icon" />
+                            French
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Bar End -->
+
+    <!-- Nav Bar -->
+    <nav class="border-b bg-white py-4 px-4 sticky top-0 z-50">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-6">
+                    <img src="../assets/logo.png" alt />
+                    <div class="hidden md:flex items-center space-x-2">
+                        <div
+                            class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+                            <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag" class="w-6 h-4 mr-2" />
+                            <select class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+                                <option value="Cameroon">Cameroon</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                            <div class="flex items-center border-l border-gray-200 pl-4">
+                                <svg class="w-4 h-4 text-purple-500 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                                </svg>
+                                <input type="text" placeholder="Job title, keyword, company"
+                                    class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <!-- Notification icon -->
+                        <div class="relative">
+                            <button>
+                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24"
+                                    viewBox="0 0 24 24">
+                                    <path
+                                        d="M 12 2 C 11.172 2 10.5 2.672 10.5 3.5 L 10.5 4.1953125 C 7.9131836 4.862095 6 7.2048001 6 10 L 6 16 L 4 18 L 4 19 L 10.269531 19 A 2 2 0 0 0 10 20 A 2 2 0 0 0 12 22 A 2 2 0 0 0 14 20 A 2 2 0 0 0 13.728516 19 L 20 19 L 20 18 L 18 16 L 18 10 C 18 7.2048001 16.086816 4.862095 13.5 4.1953125 L 13.5 3.5 C 13.5 2.672 12.828 2 12 2 z M 12 6 C 14.206 6 16 7.794 16 10 L 16 16 L 16 16.828125 L 16.171875 17 L 7.828125 17 L 8 16.828125 L 8 16 L 8 10 C 8 7.794 9.794 6 12 6 z">
+                                    </path>
+                                </svg>
+                            </button>
+                            <!-- Red dot -->
+                            <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 right-0"></div>
+                        </div>
+                        <button>
+                            <!-- Avatar image -->
+                            <img src="../assets/assets/assets/user.png" alt="Avatar" class="w-8 h-8 rounded-full" />
+                        </button>
+
+                    </div>
+                </div>
+                <div class="md:hidden flex gap-2">
+                    <button className="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">Sign
+                        In</button>
+                    <button data-collapse-toggle="navbar-default" id="menu-toggle" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                        aria-controls="navbar-default" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="navbar-default" class="hidden md:hidden">
+            <a href="#" class="block px-4 py-2 text-primary border-b-2">Home</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Find Job</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Employers</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Candidates</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Pricing Plans</a>
+            <a href="#" class="block px-4 py-2 text-gray-700">Customer
+                Supports</a>
+            <div class="items-center space-x-2">
+                <div class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
+                    <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag" class="w-6 h-4 mr-2" />
+                    <select class="bg-transparent text-gray-700 text-sm focus:outline-none mr-4">
+                        <option value="Cameroon">Cameroon</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                    <div class="flex items-center border-l border-gray-200 pl-4">
+                        <svg class="w-4 h-4 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
+                        </svg>
+                        <input type="text" placeholder="Job title, keyword, company"
+                            class="bg-transparent text-gray-700 text-sm focus:outline-none flex-initial" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+    <!-- Nav Bar End -->
+
+    <!-- Dashboard -->
+    <div class="container mx-auto flex">
+
+        <!-- Sidebar -->
+        <div class="w-1/4 relative h-screen bg-white p-4 rounded border-r hidden md:block">
+            <span class="text-[12px] text-gray-400 font-medium">EMPLOYER
+                DASHBOARD</span>
+            <ul class="space-y-2 pt-4">
+                <li><a href="employer.html" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z" />
+                        </svg>
+                        <span class="pl-3">Overview</span></a></li>
+                <li><a href="#" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="M480-440q-59 0-99.5-40.5T340-580q0-59 40.5-99.5T480-720q59 0 99.5 40.5T620-580q0 59-40.5 99.5T480-440Zm0-80q26 0 43-17t17-43q0-26-17-43t-43-17q-26 0-43 17t-17 43q0 26 17 43t43 17Zm0 440q-139-35-229.5-159.5T160-516v-244l320-120 320 120v244q0 152-90.5 276.5T480-80Zm0-400Zm0-315-240 90v189q0 54 15 105t41 96q42-21 88-33t96-12q50 0 96 12t88 33q26-45 41-96t15-105v-189l-240-90Zm0 515q-36 0-70 8t-65 22q29 30 63 52t72 34q38-12 72-34t63-52q-31-14-65-22t-70-8Z" />
+                        </svg><span class="pl-3">Company Profile</span></a></li>
+                <li><a href="post-job.html"
+                        class="flex p-2 bg-blue-100 text-primary rounded border-l-4 border-primary"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#570AF1">
+                            <path
+                                d="M440-280h80v-160h160v-80H520v-160h-80v160H280v80h160v160Zm40 200q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z" />
+                        </svg><span class="pl-3">Post a Job</span></a></li>
+                <li><a href="my-jobs.html" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm240-600h160v-80H400v80Zm400 360H600v80H360v-80H160v160h640v-160Zm-360 0h80v-80h-80v80Zm-280-80h200v-80h240v80h200v-200H160v200Zm320 40Z" />
+                        </svg><span class="pl-3">My Jobs</span></a></li>
+                <li><a href="#" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z" />
+                        </svg><span class="pl-3">Saved Candidates</span></a></li>
+                <li><a href="#" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="M560-440q-50 0-85-35t-35-85q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35ZM280-320q-33 0-56.5-23.5T200-400v-320q0-33 23.5-56.5T280-800h560q33 0 56.5 23.5T920-720v320q0 33-23.5 56.5T840-320H280Zm80-80h400q0-33 23.5-56.5T840-480v-160q-33 0-56.5-23.5T760-720H360q0 33-23.5 56.5T280-640v160q33 0 56.5 23.5T360-400Zm440 240H120q-33 0-56.5-23.5T40-240v-440h80v440h680v80ZM280-400v-320 320Z" />
+                        </svg><span class="pl-3">Plans & Bills</span></a></li>
+                <li><a href="#" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+                        </svg><span class="pl-3">Setting</span></a></li>
+                <li><a href="#" class="absolute bottom-0 flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+                            xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                            fill="#767F8C">
+                            <path
+                                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z" />
+                        </svg><span class="pl-3">Log-out</span></a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 px-5">
+
+            <!-- Post a Job -->
+            <div class="pt-14">
+                <div class="flex flex-col items-start justify-self-start mb-6 space-y-2">
+                    <h1 class="text-2xl font-semibold">Post a job</h1>
+                </div>
+                <div class="pt-8">
+                    <form>
+                        <!-- Job Title -->
+                        <div class="mb-4">
+                          <label class="block text-gray-700 text-sm font-bold mb-2" for="jobTitle">Job Title</label>
+                          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="jobTitle" type="text" placeholder="Add job title, role, vacancies etc">
+                        </div>
+                  
+                        <!-- Tags -->
+                        <div class="mb-4">
+                          <label class="block text-gray-700 text-sm font-bold mb-2" for="tags">Tags</label>
+                          <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tags" type="text" placeholder="Job keyword, tags etc">
+                        </div>
+                  
+                        <!-- Job Role -->
+                        <div class="mb-4">
+                          <label class="block text-gray-700 text-sm font-bold mb-2" for="jobRole">Job Role</label>
+                          <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="jobRole">
+                            <option>Select...</option>
+                          </select>
+                        </div>
+                  
+                        <!-- Salary -->
+                        <div class="flex mb-4">
+                          <div class="w-1/2 pr-2">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="minSalary">Min Salary</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="minSalary" type="text" placeholder="Minimum salary">
+                          </div>
+                          <div class="w-1/2 pl-2">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="maxSalary">Max Salary</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="maxSalary" type="text" placeholder="Maximum salary">
+                          </div>
+                        </div>
+                  
+                        <!-- Salary Type -->
+                        <div class="mb-4">
+                          <label class="block text-gray-700 text-sm font-bold mb-2" for="salaryType">Salary Type</label>
+                          <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="salaryType">
+                            <option>Select...</option>
+                          </select>
+                        </div>
+                  
+                        <!-- Advanced Information -->
+                        <h3 class="text-xl font-bold mb-4">Advance Information</h3>
+                        <div class="flex flex-wrap mb-4">
+                          <div class="w-1/2 pr-2 mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="education">Education</label>
+                            <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="education">
+                              <option>Select...</option>
+                            </select>
+                          </div>
+                          <div class="w-1/2 pl-2 mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="experience">Experience</label>
+                            <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="experience">
+                              <option>Select...</option>
+                            </select>
+                          </div>
+                          <div class="w-1/2 pr-2 mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="jobType">Job Type</label>
+                            <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="jobType">
+                              <option>Select...</option>
+                            </select>
+                          </div>
+                          <div class="w-1/2 pl-2 mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="vacancies">Vacancies</label>
+                            <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="vacancies">
+                              <option>Select...</option>
+                            </select>
+                          </div>
+                          <div class="w-1/2 pr-2 mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="expirationDate">Expiration Date</label>
+                            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="expirationDate" type="date">
+                          </div>
+                          <div class="w-1/2 pl-2 mb-4">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="jobLevel">Job Level</label>
+                            <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="jobLevel">
+                              <option>Select...</option>
+                            </select>
+                          </div>
+                        </div>
+                  
+                        <!-- Location -->
+                        <h3 class="text-xl font-bold mb-4">Location</h3>
+                        <div class="flex mb-4">
+                          <div class="w-1/2 pr-2">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="country">Country</label>
+                            <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="country">
+                              <option>Select...</option>
+                            </select>
+                          </div>
+                          <div class="w-1/2 pl-2">
+                            <label class="block text-gray-700 text-sm font-bold mb-2" for="city">City</label>
+                            <select class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="city">
+                              <option>Select...</option>
+                            </select>
+                          </div>
+                        </div>
+                  
+                        <!-- Remote Position -->
+                        <div class="mb-4">
+                          <label class="inline-flex items-center">
+                            <input type="checkbox" class="form-checkbox h-5 w-5 text-blue-600">
+                            <span class="ml-2 text-gray-700">Fully Remote Position - Worldwide</span>
+                          </label>
+                        </div>
+                  
+                        <!-- Job Benefits -->
+                        <h3 class="text-xl font-bold mb-4">Job Benefits</h3>
+                        <div class="flex flex-wrap mb-4">
+                          <div class="w-full">
+                            <div class="flex flex-wrap -m-1">
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">401k Salary</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Distributed Team</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Async</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Vision Insurance</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Dental Insurance</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Medical Insurance</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Unlimited vacation</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">4 day workweek</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">401k matching</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">company retreats</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Learning budget</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Free gym membership</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Pay in crypto</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Profit Sharing</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">Equity Compensation</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">No whiteboard interview</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">No politics at work</span>
+                              <span class="m-1 bg-blue-100 text-blue-800 text-sm font-semibold mr-2 px-2.5 py-0.5 rounded">We hire old (and young)</span>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <!-- Job Description -->
+                        <div class="mb-4">
+                          <label class="block text-gray-700 text-sm font-bold mb-2" for="jobDescription">Job Description</label>
+                          <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32" id="jobDescription" placeholder="Add your job description..."></textarea>
+                        </div>
+                        </div>
+                  
+                        <!-- Post Job Button -->
+                        <div class=" pb-8 flex justify-end">
+                          <button class="bg-slate-300 hover:bg-primary text-primary  hover:text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            Post Job
+                          </button>
+                        </div>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="border-t">
+        <div class="items-center justify-center">
+            <h3 class="text-sm text-gray-400 text-center py-4">©2024
+                Jobuntu - Job Portal. All rights Reserved.</h3>
+        </div>
+    </footer>
+    <script>
+        // Toggle mobile menu
+        document
+            .getElementById("menu-toggle")
+            .addEventListener("click", function () {
+                var menu = document.getElementById("navbar-default");
+                menu.classList.toggle("hidden");
+            });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+</body>
+
+</html>
