@@ -2,13 +2,17 @@
 <div class="bg-gray-100">
     <div class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm">
         <div class="flex items-center space-x-4">
-            <a href="{{ route('home') }}" class="text-primary border-b-2">Home</a>
-            <a href="{{ route('jobs.index') }}" class="text-gray-700">Find
-                Job</a>
-            <a href="#" class="text-gray-700">Employers</a>
-            <a href="#" class="text-gray-700">Candidates</a>
+            <a href="{{ route('home') }}"
+                class="{{ request()->routeIs('home') ? 'text-primary border-b-2' : 'text-gray-700' }}">Home</a>
+            <a href="{{ route('jobs.index') }}"
+                class="{{ request()->routeIs('jobs.index') ? 'text-primary border-b-2' : 'text-gray-700' }}">Find Job</a>
+            <a href="{{ route('employer.dashboard') }}"
+                class="{{ request()->routeIs('employer.dashboard') ? 'text-primary border-b-2' : 'text-gray-700' }}">Employers</a>
+            <a href="{{ route('candidate.dashboard') }}"
+                class="{{ request()->routeIs('candidate.dashboard') ? 'text-primary border-b-2' : 'text-gray-700' }}">Candidates</a>
             <a href="#" class="text-gray-700">Pricing Plans</a>
             <a href="#" class="text-gray-700">Customer Supports</a>
+
         </div>
         <div class="flex items-center justify-center space-x-4">
             <div>
@@ -39,7 +43,9 @@
     <div class="container mx-auto">
         <div class="flex justify-between items-center">
             <div class="flex items-center space-x-6">
-                <img src="/assets/logo.png" alt />
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('/assets/logo.png') }}" alt />
+                </a>
                 <div class="hidden md:flex items-center space-x-2">
                     <div
                         class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
@@ -76,16 +82,19 @@
                         <!-- Red dot -->
                         <div class="absolute w-3 h-3 bg-red-500 rounded-full top-0 right-0"></div>
                     </div>
-                    <button>
+                    <a href="{{ route('employer.profile') }}">
                         <!-- Avatar image -->
-                        <img src="/assets/assets/assets/user.png" alt="Avatar" class="w-8 h-8 rounded-full" />
-                    </button>
+                        <img src="{{ asset(Auth::user()->employer->logo) }}" alt="Avatar"
+                            class="w-8 h-8 rounded-full" />
+                    </a>
 
                 </div>
             </div>
             <div class="md:hidden flex gap-2">
-                <button className="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">Sign
-                    In</button>
+                <a href="{{ route('employer.profile') }}">
+                    <!-- Avatar image -->
+                    <img src="{{ asset(Auth::user()->employer->logo) }}" alt="Avatar" class="w-8 h-8 rounded-full" />
+                </a>
                 <button data-collapse-toggle="navbar-default" id="menu-toggle" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                     aria-controls="navbar-default" aria-expanded="false">
@@ -100,13 +109,13 @@
         </div>
     </div>
     <div id="navbar-default" class="hidden md:hidden">
-        <a href="#" class="block px-4 py-2 text-primary border-b-2">Home</a>
-        <a href="#" class="block px-4 py-2 text-gray-700">Find Job</a>
-        <a href="#" class="block px-4 py-2 text-gray-700">Employers</a>
-        <a href="#" class="block px-4 py-2 text-gray-700">Candidates</a>
-        <a href="#" class="block px-4 py-2 text-gray-700">Pricing Plans</a>
-        <a href="#" class="block px-4 py-2 text-gray-700">Customer
-            Supports</a>
+        <a href="{{ route('home') }}" class="text-primary border-b-2">Home</a>
+        <a href="{{ route('jobs.index') }}" class="text-gray-700">Find
+            Job</a>
+        <a href="{{ route('employer.dashboard') }}" class="text-gray-700">Employers</a>
+        <a href="{{ route('candidate.dashboard') }}" class="text-gray-700">Candidates</a>
+        <a href="#" class="text-gray-700">Pricing Plans</a>
+        <a href="#" class="text-gray-700">Customer Supports</a>
         <div class="items-center space-x-2">
             <div class="max-w-md mx-auto bg-white border border-gray-200 rounded-sm flex items-center px-4 py-2">
                 <img src="https://flagcdn.com/w320/cm.png" alt="Cameroon Flag" class="w-6 h-4 mr-2" />
@@ -115,8 +124,8 @@
                     <!-- Add more options as needed -->
                 </select>
                 <div class="flex items-center border-l border-gray-200 pl-4">
-                    <svg class="w-4 h-4 text-purple-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
+                    <svg class="w-4 h-4 text-purple-500 mr-2" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
                     </svg>

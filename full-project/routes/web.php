@@ -31,6 +31,10 @@ Route::middleware(['auth', 'verified', 'employer', 'check.employer.profile'])->g
     Route::get('company/dashboard', [EmployerController::class, 'dashboard'])->name('employer.dashboard');
     Route::get('company/profile/complete', [EmployerController::class, 'showCompleteProfileForm'])->name('employer.completeProfileForm');
     Route::post('company/profile/complete', [EmployerController::class, 'completeProfile'])->name('employer.completeProfile');
+    Route::get('company/profile', [EmployerController::class, 'profile'])->name('employer.profile');
+    Route::get('company/jobs', [EmployerController::class, 'jobs'])->name('employer.jobs');
+    Route::get('company/profile/update', [EmployerController::class, 'setting'])->name('employer.setting');
+    Route::put('company/profile/update', [EmployerController::class, 'updateProfile'])->name('employer.profile.update');
 
     // Joblisting
     Route::get('/company/jobs/create', [JobListingController::class, 'create'])->name('jobs.create');

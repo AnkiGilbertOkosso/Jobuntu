@@ -140,6 +140,59 @@
             }
         });
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach((tab, index) => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.add('text-gray-400'));
+                    tab.classList.remove('text-gray-400');
+                    tab.classList.add('text-primary');
+
+                    contents.forEach(content => content.classList.add('hidden'));
+                    contents[index].classList.remove('hidden');
+                });
+            });
+        });
+    </script>
+    <script>
+        document.getElementById('logo').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('logo-preview');
+                    preview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('dropzone-label').addEventListener('click', function(event) {
+            if (event.target.tagName !== 'INPUT') {
+                document.getElementById('logo').click();
+            }
+        });
+        document.getElementById('banner_image').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('banner-preview');
+                    preview.src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('banner-label').addEventListener('click', function(event) {
+            if (event.target.tagName !== 'INPUT') {
+                document.getElementById('banner_image').click();
+            }
+        });
+    </script>
 </body>
 
 </html>

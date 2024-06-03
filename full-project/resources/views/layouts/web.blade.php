@@ -109,17 +109,17 @@
                 <div class="hidden md:flex items-center space-x-4">
                     <div class="flex items-center space-x-2">
                         <a href="{{ route('register') }}"
-                            class="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">
+                            class="border border-primary bg-transparent text-primary px-4 py-2 rounded">
                             Sign In
                         </a>
-                        <button class="bg-purple-600 text-white px-4 py-2 rounded">
+                        <button class="bg-primary text-white px-4 py-2 rounded">
                             Post A Jobs
                         </button>
                     </div>
                 </div>
                 <div class="md:hidden flex gap-2">
                     <a href="login.html"
-                        class="border border-purple-600 bg-transparent text-primary px-4 py-2 rounded">Sign In</a>
+                        class="border border-primary bg-transparent text-primary px-4 py-2 rounded">Sign In</a>
                     <button data-collapse-toggle="navbar-default" id="menu-toggle" type="button"
                         class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
                         aria-controls="navbar-default" aria-expanded="false">
