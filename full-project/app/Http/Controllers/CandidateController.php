@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Candidate;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -29,56 +30,61 @@ class CandidateController extends Controller
 
     public function saveProfileStep(Request $request)
     {
-        $user = Auth::user();
-        $candidate = $user->candidate;
-
-        // Validate and save the current step data
         $request->validate([
-            'resume' => 'nullable|mimes:pdf,doc,docx|max:5120',
-            'skills' => 'required|string',
-            'experience' => 'required|string',
-            'education' => 'required|string',
-            'nationality' => 'required|string',
-            'gender' => 'required|string',
-            'biography' => 'required|string',
-            'profile_picture' => 'nullable|image|max:5120',
-            'marital_status' => 'required|string',
-            'date_of_birth' => 'required|date',
-            'facebook' => 'nullable|url',
-            'instagram' => 'nullable|url',
-            'linkedin' => 'nullable|url',
-            'twitter' => 'nullable|url',
-            'contact_number' => 'required|string|max:20',
-            'location' => 'required|string',
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'full_name' => 'nullable|string|max:255',
+            'title' => 'nullable|string|max:255',
+            'resume' => 'nullable|string',
+            'skills' => 'nullable|string',
+            'experience' => 'nullable|string|max:255',
+            'education' => 'nullable|string|max:255',
+            'nationality' => 'nullable|string|max:255',
+            'gender' => 'nullable|string|max:255',
+            'biography' => 'nullable|string',
+            'marital_status' => 'nullable|string|max:255',
+            'date_of_birth' => 'nullable|date',
+            'personal_website' => 'nullable|url|max:255',
+            'social_links.*' => 'nullable|url|max:255',
+            'phone' => 'nullable|string|max:20',
+            'email' => 'required|string|email|max:255|unique:candidates,email,' . Auth::id(), // unique except for the current candidate
+            'location' => 'nullable|string|max:255',
         ]);
 
-        // Save the uploaded files if any
-        if ($request->hasFile('resume')) {
-            $candidate->resume = $request->file('resume')->store('resumes', 'public');
-        }
+        // Get the authenticated user
+        $user = Auth::user();
+
+        // Check if the user has a candidate profile, otherwise create a new one
+        $candidate = $user->candidate ?? new Candidate();
+
         if ($request->hasFile('profile_picture')) {
-            $candidate->profile_picture = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $profilePicturePath = $request->file('profile_picture')->store('profile_pictures', 'public');
+            $candidate->profile_picture = $profilePicturePath;
         }
 
-        // Save the rest of the data
-        $candidate->update([
-            'skills' => $request->skills,
-            'experience' => $request->experience,
-            'education' => $request->education,
-            'nationality' => $request->nationality,
-            'gender' => $request->gender,
-            'biography' => $request->biography,
-            'marital_status' => $request->marital_status,
-            'date_of_birth' => $request->date_of_birth,
-            'facebook' => $request->facebook,
-            'instagram' => $request->instagram,
-            'linkedin' => $request->linkedin,
-            'twitter' => $request->twitter,
-            'contact_number' => $request->contact_number,
-            'location' => $request->location,
-        ]);
+        // Update candidate profile with the request data
+        $candidate->full_name = $request->input('full_name');
+        $candidate->title = $request->input('title');
+        $candidate->resume = $request->input('resume');
+        $candidate->skills = $request->input('skills');
+        $candidate->experience = $request->input('experience');
+        $candidate->education = $request->input('education');
+        $candidate->nationality = $request->input('nationality');
+        $candidate->gender = $request->input('gender');
+        $candidate->biography = $request->input('biography');
+        $candidate->marital_status = $request->input('marital_status');
+        $candidate->date_of_birth = $request->input('date_of_birth');
+        $candidate->personal_website = $request->input('personal_website');
+        $candidate->social_link = json_encode($request->input('social_links'));
+        $candidate->phone = $request->input('phone');
+        $candidate->email = $request->input('email');
+        $candidate->location = $request->input('location');
 
-        // Redirect to the next step or to the dashboard
-        return redirect()->route('candidate.dashboard')->with('success', 'Profile completed successfully.');
+        // Associate the candidate with the user
+        $candidate->user()->associate($user);
+
+        // Save the candidate profile
+        $candidate->save();
+
+        return redirect()->back()->with('success', 'Profile completed successfully.');
     }
 }

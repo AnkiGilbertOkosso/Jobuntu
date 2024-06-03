@@ -1,4 +1,5 @@
-<x-web-layout>
+@extends('layouts.web')
+@section('content')
     <!-- Hero section  -->
     <div class="container flex flex-col py-4 px-4 mx-auto space-y-6 md:py-16 md:flex-row md:items-center md:space-x-6">
         <div class="flex flex-col items-center w-full md:flex-row md:w-1/2">
@@ -19,8 +20,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M21 21l-4.35-4.35M17 10A7 7 0 1110 3a7 7 0 017 7z"></path>
                             </svg>
-                            <input type="text" placeholder="Job title, Keyword..."
-                                class="flex-grow text-gray-700" />
+                            <input type="text" placeholder="Job title, Keyword..." class="flex-grow text-gray-700" />
                         </div>
 
                         <div class="flex items-center pl-4 pr-4 border-l">
@@ -28,11 +28,9 @@
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M19 10C19 17 10 23 10 23C10 23 1 17 1 10C1 7.61305 1.94821 5.32387 3.63604 3.63604C5.32387 1.94821 7.61305 1 10 1C12.3869 1 14.6761 1.94821 16.364 3.63604C18.0518 5.32387 19 7.61305 19 10Z"
-                                    stroke="#570AF1" stroke-width="1.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
+                                    stroke="#570AF1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <input type="text" placeholder="Your Location"
-                                class="flex-grow text-gray-700"/>
+                            <input type="text" placeholder="Your Location" class="flex-grow text-gray-700" />
                         </div>
                         <div class="flex items-center">
                             <button type="submit"
@@ -337,343 +335,38 @@
                 </h2>
                 <div
                     class="flex justify-between md:mt-5 items-center border text-[#570AF1] py-2 px-4 rounded hover:bg-blue-500 hover:text-white transition-colors duration-300">
-                    <a href="../src/FeaturedJob.html" class="mr-2">View all</a>
+                    <a href="{{ route('jobs.index') }}" class="mr-2">View all</a>
                     <i class="fas fa-arrow-right"></i>
                 </div>
             </div>
             <div class="container mt-12 w-[100%] mx-auto text-nowrap grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Techical Support Specialist</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
+                @foreach ($jobs as $job)
+                    <a href="{{ route('jobs.show', $job->id) }}">
+                        <div
+                            class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
+                            <h1 class='text-2xl font-semibold mb-1 text-[#18191C]'>{{ $job->job_title }}</h1>
+                            <div class="flex space-x-4">
+                                <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>
+                                    {{ strtoupper($job->job_type) }}</p>
+                                <span class='text-[#767F8C]'>salary: ${{ $job->min_salary }}-${{ $job->max_salary }}</span>
                             </div>
-                            <div class="flex items-center mt-2">
-                                <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
-                                <p class="ml-2" style="color: #767F8C;">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Senior UX Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
+                            <div class="flex items-center space-x-5" data-aos="fade-up">
+                                <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
+                                    alt="Employer Logo" />
+                                <div class='flex flex-col w-full'>
+                                    <div class="flex justify-between items-center w-full">
+                                        <h1>{{ $job->employer->company_name }}</h1>
+                                        <span class="ml-auto text-gray-400"><i class="fas fa-bookmark"></i></span>
+                                    </div>
+                                    <div class="flex items-center mt-2 text-gray-400">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <p class="ml-2"> {{ $job->city }}, {{ $job->country }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Interaction Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Software Engineer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Interaction Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
-                                <p class="ml-2" style="color: #767F8C;">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Project Manager</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
-                                <p class="ml-2" style="color: #767F8C;">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Senior UX Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Senior UX Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Interaction Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Software Engineer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Interaction Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
-                                <p class="ml-2" style="color: #767F8C;">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg bg-gradient-to-r from-yellow-100 to-white border-2 border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Project Manager</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2">
-                                <i class="fas fa-map-marker-alt" style="color: #767F8C;"></i>
-                                <p class="ml-2" style="color: #767F8C;">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Senior UX Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Marketing Manager</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>INTERNSHIP</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="box p-6 mb-6 relative cursor-pointer border hover:scale-110 hover:shadow-sm transition-transform duration-300 rounded-lg border-gray-300">
-                    <h1 class='text-[25px] font-semibold mb-[0.4rem] text-[#18191C]'>Interaction Designer</h1>
-                    <div class="flex space-x-4">
-                        <p class='text-[#0BA02C] border border-[#E7F6EA] bg-[#E7F6EA]'>PART-TIME</p>
-                        <span class='text-[#767F8C]'>salary: $20,000-$25,000</span>
-                    </div>
-                    <div class="flex items-center space-x-5" data-aos="fade-up">
-                        <img src="../assets/assets/assets/Employers Logo.png" width="40" height="40"
-                            alt="Employer Logo" />
-                        <div class='flex flex-col w-full'>
-                            <div class="flex justify-between items-center w-full">
-                                <h1>Googleinc</h1>
-                                <span class="ml-auto" style="color: #C8CCD1;"><i class="fas fa-bookmark"></i></span>
-                            </div>
-                            <div class="flex items-center mt-2" style="color: #767F8C;">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p class="ml-2">Dhaka</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
@@ -918,4 +611,4 @@
         </div>
     </div>
     <!-- Banner end -->
-</x-web-layout>
+@endsection

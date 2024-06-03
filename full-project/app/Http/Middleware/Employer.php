@@ -21,7 +21,7 @@ class Employer
             return redirect()->route('login');
         }
         $userRole = Auth::user()->role;
-        
+
         // Employer
         if ($userRole == 2) {
             return $next($request);

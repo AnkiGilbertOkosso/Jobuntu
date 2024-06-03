@@ -2,8 +2,8 @@
 <div class="bg-gray-100">
     <div class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm">
         <div class="flex items-center space-x-4">
-            <a href="/src/index.html" class="text-primary border-b-2">Home</a>
-            <a href="/src/FeaturedJob.html" class="text-gray-700">Find
+            <a href="{{ route('home') }}" class="text-primary border-b-2">Home</a>
+            <a href="{{ route('jobs.index') }}" class="text-gray-700">Find
                 Job</a>
             <a href="#" class="text-gray-700">Employers</a>
             <a href="#" class="text-gray-700">Candidates</a>

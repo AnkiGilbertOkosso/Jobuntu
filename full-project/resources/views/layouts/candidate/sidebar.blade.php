@@ -2,7 +2,7 @@
     <span class="text-[12px] text-gray-400 font-medium">CANDIDATE
         DASHBOARD</span>
     <ul class="space-y-2 pt-4">
-        <li><a href="employer.html" class="flex p-2 bg-blue-100 text-primary rounded border-l-4 border-primary"><svg
+        <li><a href="{{ route('candidate.dashboard') }}" class="flex p-2 bg-blue-100 text-primary rounded border-l-4 border-primary"><svg
                     xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#570AF1">
                     <path
                         d="M480-400 40-640l440-240 440 240-440 240Zm0 160L63-467l84-46 333 182 333-182 84 46-417 227Zm0 160L63-307l84-46 333 182 333-182 84 46L480-80Zm0-411 273-149-273-149-273 149 273 149Zm0-149Z" />

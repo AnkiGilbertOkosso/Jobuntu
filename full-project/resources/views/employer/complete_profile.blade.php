@@ -66,7 +66,8 @@
                             <div class="flex flex-col space-y-3 col-span-1 items-start justify-center w-full">
                                 <label for="logo" class="block text-gray-700 font-semibold mb-2">Upload Logo</label>
                                 <label for="logo"
-                                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600">
+                                    class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600"
+                                    id="dropzone-label">
                                     <div class="flex flex-col items-center justify-center pt-5 pb-6"
                                         id="dropzone-content">
                                         <svg class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor"
@@ -76,23 +77,23 @@
                                             </path>
                                         </svg>
                                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span
-                                                class="font-semibold">Click to upload</span>
-                                            or drag and drop</p>
+                                                class="font-semibold">Click to upload</span> or drag and drop</p>
                                         <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX.
                                             800x400px)</p>
+
                                     </div>
-                                    <input id="logo" name="logo" type="file" class="hidden"
-                                        accept="image/*" />
-                                    <img id="logo-preview" class="mt-3 hidden w-full h-64 object-cover rounded-lg" />
+                                    <input id="logo" name="logo" type="file" class="hidden" accept="image/*" />
+                                    <img id="logo-preview" src="" alt="Logo Preview"
+                                    class="hidden h-full w-full object-contain">
                                 </label>
                             </div>
                             <!-- Banner Image Upload -->
                             <div class="flex flex-col col-span-2 items-start space-y-3 justify-center w-full">
                                 <label for="banner_image" class="block text-gray-700 font-semibold mb-2">Banner
                                     Image</label>
-                                <label for="banner_image"
+                                <label for="banner_image" id="banner-label"
                                     class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600 ">
-                                    <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                    <div class="flex flex-col items-center justify-center pt-5 pb-6" id="banner-content">
                                         <svg class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor"
                                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -107,7 +108,7 @@
                                     <input id="banner_image" name="banner_image" type="file" class="hidden"
                                         accept="image/*" />
                                     <img id="banner-preview"
-                                        class="mt-3 hidden w-full h-64 object-cover rounded-lg" />
+                                        class="mt-3 hidden w-full h-64 object-contain rounded-lg" />
                                 </label>
                             </div>
                         </div>
@@ -134,12 +135,14 @@
                 <fieldset class="step my-12 hidden">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                         <div>
-                            <label for="organization_type" class="block text-gray-700 font-semibold mb-2">Organization Type</label>
+                            <label for="organization_type" class="block text-gray-700 font-semibold mb-2">Organization
+                                Type</label>
                             <input type="text" id="organization_type" name="organization_type" value=""
                                 class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                         </div>
                         <div>
-                            <label for="industry_types" class="block text-gray-700 font-semibold mb-2">Industry Type</label>
+                            <label for="industry_types" class="block text-gray-700 font-semibold mb-2">Industry
+                                Type</label>
                             <input type="text" id="industry_types" name="industry_types" value=""
                                 class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                         </div>
@@ -253,30 +256,6 @@
 
     {{-- <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script> --}}
     <script>
-        const dropzoneFileInput = document.getElementById('dropzone-file');
-        const imagePreview = document.getElementById('image-preview');
-        const dropzoneContent = document.getElementById('dropzone-content');
-
-        dropzoneFileInput.addEventListener('change', function() {
-            const file = this.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    imagePreview.src = e.target.result;
-                    imagePreview.classList.remove('hidden');
-                    dropzoneContent.classList.add('hidden');
-                };
-                reader.readAsDataURL(file);
-            } else {
-                imagePreview.src = '';
-                imagePreview.classList.add('hidden');
-                dropzoneContent.classList.remove('hidden');
-            }
-        });
-
-        dropzoneContent.addEventListener('click', () => dropzoneFileInput.click());
-    </script>
-    <script>
         document.addEventListener("DOMContentLoaded", function() {
             const steps = document.querySelectorAll(".step");
             const progressBar = document.getElementById("setupProgressBar");
@@ -328,6 +307,46 @@
             });
 
             updateStep(currentStep);
+        });
+    </script>
+    <script>
+        document.getElementById('logo').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('logo-preview');
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden');
+                    document.getElementById('dropzone-content').classList.add('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('dropzone-label').addEventListener('click', function(event) {
+            if (event.target.tagName !== 'INPUT') {
+                document.getElementById('logo').click();
+            }
+        });
+        document.getElementById('banner_image').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('banner-preview');
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden');
+                    document.getElementById('banner-content').classList.add('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('banner-label').addEventListener('click', function(event) {
+            if (event.target.tagName !== 'INPUT') {
+                document.getElementById('banner_image').click();
+            }
         });
     </script>
 

@@ -14,7 +14,8 @@ class JobListingController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = JobListing::orderBy("created_at","desc")->paginate(10);
+        return view("jobs.list", compact("jobs"));
     }
 
     /**
@@ -89,7 +90,8 @@ class JobListingController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $job = JobListing::findOrFail($id);
+        return view('jobs.show', compact('job'));
     }
 
     /**

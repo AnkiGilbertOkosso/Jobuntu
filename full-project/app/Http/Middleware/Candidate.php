@@ -21,10 +21,10 @@ class Candidate
             return redirect()->route('login');
         }
         $userRole = Auth::user()->role;
-        
+
         // Employer
         if ($userRole == 2) {
-            return redirect()->route('candidate.dashboard');
+            return redirect()->route('employer.dashboard');
 
         }
         // Candidate

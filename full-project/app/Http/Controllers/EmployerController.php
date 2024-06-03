@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Employer;
+use App\Traits\FileUploadTrait;
 
 class EmployerController extends Controller
 {
+    use FileUploadTrait;
     public function dashboard()
     {
         $employer = Auth::user()->employer;
+
+
 
         return view('employer.dashboard', compact('employer'));
     }
@@ -50,16 +54,11 @@ class EmployerController extends Controller
 
         $employer = $user->employer ?? new Employer();
 
-        if ($request->hasFile('logo')) {
-            $logoPath = $request->file('logo')->store('logos', 'public');
-            $employer->logo = $logoPath;
-        }
+        $logoPath = $this->handleFileUpload($request, 'logo', $request->old_image);
+        $bannerImagePath = $this->handleFileUpload($request, 'banner_image', $request->old_image);
 
-        if ($request->hasFile('banner_image')) {
-            $bannerImagePath = $request->file('banner_image')->store('banners', 'public');
-            $employer->banner_image = $bannerImagePath;
-        }
-
+        $employer->banner_image = $bannerImagePath;
+        $employer->logo = $logoPath;
         $employer->company_name = $request->input('company_name');
         $employer->about_us = $request->input('about_us');
         $employer->organization_type = $request->input('organization_type');
@@ -73,7 +72,7 @@ class EmployerController extends Controller
         $employer->email = $request->input('email');
 
         $employer->user()->associate($user);
-        
+
         $employer->save();
 
         return redirect()->route('employer.dashboard')->with('success', 'Profile completed successfully.');

@@ -65,6 +65,7 @@
                 Jobuntu - Job Portal. All rights Reserved.</h3>
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         // Toggle mobile menu
         document

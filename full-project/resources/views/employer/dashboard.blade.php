@@ -8,7 +8,7 @@
             </div>
         @endif
         <div class="flex flex-col items-start justify-self-start mb-6 space-y-2">
-            <h1 class="text-2xl font-semibold">Hello, Esther Howard</h1>
+            <h1 class="text-2xl font-semibold">Hello, {{ Auth::user()->name }}</h1>
             <p class="text-gray-700">Here is your daily activities
                 and application</p>
         </div>

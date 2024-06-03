@@ -11,6 +11,8 @@ class Candidate extends Model
 
     protected $fillable = [
         'UserID',
+        'full_name',
+        'Title',
         'Resume',
         'Skills',
         'Experience',
@@ -21,6 +23,7 @@ class Candidate extends Model
         'profile_picture',
         'marital_status',
         'date_of_birth',
+        'personal_website',
         'social_link',
         'phone',
         'email',
@@ -30,5 +33,9 @@ class Candidate extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
+    }
+    public function applications()
+    {
+        return $this->hasMany(Application::class);
     }
 }

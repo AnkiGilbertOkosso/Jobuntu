@@ -11,6 +11,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.bunny.net">
+    <link rel="icon" href="public/favicon.png">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
 
@@ -49,7 +50,7 @@
     <div class="container mx-auto py-3 hidden md:flex justify-between items-center text-sm">
         <div class="flex items-center space-x-4">
             <a href="{{ route('home') }}" class="text-primary border-b-2">Home</a>
-            <a href="/src/FeaturedJob.html" class="text-gray-700">Find Job</a>
+            <a href="{{ route('jobs.index') }}" class="text-gray-700">Find Job</a>
             <a href="{{ route('employer.dashboard') }}" class="text-gray-700">Employers</a>
             <a href="{{ route('candidate.dashboard') }}" class="text-gray-700">Candidates</a>
             <a href="#" class="text-gray-700">Pricing Plans</a>
@@ -162,7 +163,7 @@
         </div>
     </nav>
     <!-- Nav Bar End -->
-    {{ $slot }}
+    @yield('content')
     <!-- footer -->
     <footer class="bg-[#18191C]">
         <div class="mx-auto max-w-screen-xl px-6 py-10 sm:px-6 lg:px-8 mt-24 ">

@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
 
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -139,7 +140,6 @@
             }
         });
     </script>
-
 </body>
 
 </html>
