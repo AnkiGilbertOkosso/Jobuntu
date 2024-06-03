@@ -11,7 +11,7 @@ class JobListing extends Model
     protected $table = 'job_listings';
 
     protected $fillable = [
-        'user_id',
+        'employer_id',
         'job_title',
         'tags',
         'job_role',
@@ -38,10 +38,7 @@ class JobListing extends Model
         'expiration_date' => 'date',
     ];
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
     public function employer()
     {
         return $this->belongsTo(Employer::class);

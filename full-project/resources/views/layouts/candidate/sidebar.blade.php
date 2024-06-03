@@ -54,7 +54,7 @@
                     </g>
                 </svg>
                 <span class="pl-3">Jobs Alert</span></a></li>
-        <li><a href="{{ route('candidate.setting') }}" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
+        <li><a href="{{ route('candidate.profile') }}" class="flex p-2 text-gray-700 hover:bg-gray-100 rounded"><svg
                     xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
                     fill="#767F8C">
                     <path

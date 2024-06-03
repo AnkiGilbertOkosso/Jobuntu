@@ -84,7 +84,7 @@
                     </div>
                     <a href="{{ route('employer.profile') }}">
                         <!-- Avatar image -->
-                        <img src="{{ asset(Auth::user()->employer->logo) }}" alt="Avatar"
+                        <img src="{{ asset(Auth::user()->employer->logo ?? '') }}" alt="Avatar"
                             class="w-8 h-8 rounded-full" />
                     </a>
 
@@ -93,7 +93,7 @@
             <div class="md:hidden flex gap-2">
                 <a href="{{ route('employer.profile') }}">
                     <!-- Avatar image -->
-                    <img src="{{ asset(Auth::user()->employer->logo) }}" alt="Avatar" class="w-8 h-8 rounded-full" />
+                    <img src="{{ asset(Auth::user()->employer->logo ?? '') }}" alt="Avatar" class="w-8 h-8 rounded-full" />
                 </a>
                 <button data-collapse-toggle="navbar-default" id="menu-toggle" type="button"
                     class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"

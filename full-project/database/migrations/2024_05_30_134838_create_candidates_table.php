@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('full_name')->nullable();
-            $table->string('Title')->nullable();
-            $table->text('Resume')->nullable();
-            $table->string('Skills')->nullable();
-            $table->string('Experience')->nullable();
-            $table->string('Education')->nullable();
+            $table->string('title')->nullable();
+            $table->text('resume')->nullable();
+            $table->string('skills')->nullable();
+            $table->string('experience')->nullable();
+            $table->string('education')->nullable();
             $table->string('nationality')->nullable();
             $table->string('gender')->nullable();
             $table->text('biography')->nullable();

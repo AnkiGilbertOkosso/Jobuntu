@@ -14,7 +14,7 @@ class JobListingController extends Controller
      */
     public function index()
     {
-        $jobs = JobListing::orderBy("created_at","desc")->paginate(10);
+        $jobs = JobListing::orderBy("created_at", "desc")->paginate(10);
         return view("jobs.list", compact("jobs"));
     }
 
@@ -61,19 +61,32 @@ class JobListingController extends Controller
             'job_benefits' => 'nullable|array'
         ]);
 
+        $minSalary = $request->input('min_salary');
+        $maxSalary = $request->input('max_salary');
+
+        if ($maxSalary !== null && $minSalary !== null && $maxSalary < $minSalary) {
+            return response()->json(['message' => 'Max salary must be greater than or equal to min salary'], 422);
+        }
+
+        $expirationDate = $request->input('expiration_date');
+
+        if (strtotime($expirationDate) <= strtotime('today')) {
+            return response()->json(['message' => 'Expiration date must be in the future'], 422);
+        }
+
         $jobListing = new JobListing();
         $jobListing->employer_id = $employer->id;
         $jobListing->job_title = $request->input('job_title');
         $jobListing->tags = $request->input('tags') ? json_encode(explode(',', $request->input('tags'))) : json_encode([]);
         $jobListing->job_role = $request->input('job_role');
-        $jobListing->min_salary = $request->input('min_salary');
-        $jobListing->max_salary = $request->input('max_salary');
+        $jobListing->min_salary = $minSalary;
+        $jobListing->max_salary = $maxSalary;
         $jobListing->salary_type = $request->input('salary_type');
         $jobListing->education = $request->input('education');
         $jobListing->experience = $request->input('experience');
         $jobListing->job_type = $request->input('job_type');
         $jobListing->vacancies = $request->input('vacancies');
-        $jobListing->expiration_date = $request->input('expiration_date');
+        $jobListing->expiration_date = $expirationDate;
         $jobListing->job_level = $request->input('job_level');
         $jobListing->country = $request->input('country');
         $jobListing->city = $request->input('city');
@@ -82,7 +95,7 @@ class JobListingController extends Controller
         $jobListing->job_benefits = $request->input('job_benefits') ? json_encode($request->input('job_benefits')) : json_encode([]);
         $jobListing->save();
 
-        return redirect()->route('employer.dashboard')->with('message', 'Job listing created successfully!');
+        return redirect()->back()->with('message', 'Job listing created successfully!');
     }
 
     /**

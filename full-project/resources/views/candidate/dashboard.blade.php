@@ -3,9 +3,9 @@
 @section('content')
 <div class="pt-14">
     <div class="flex flex-col items-start justify-self-start mb-6 space-y-2">
-        <h1 class="text-2xl font-semibold">Hello, Esther Howard</h1>
+        <h1 class="text-2xl font-semibold">Hello, {{ Auth::user()->name }}</h1>
         <p class="text-gray-700">Here is your daily activities
-            and application</p>
+            and new jobs</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
@@ -44,7 +44,7 @@
 
     @if (session('profile_incomplete'))
             <div class="bg-red-100 text-red-600 p-4 rounded mb-6">
-                Your profile is not completed. {{ session('profile_incomplete') }} <a href="{{ route('employer.completeProfileForm') }}" class="underline ">Here</a>
+                Your profile is not completed. {{ session('profile_incomplete') }} <a href="{{ route('candidate.setting') }}" class="underline ">Here</a>
             </div>
         @endif
 

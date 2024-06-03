@@ -22,9 +22,9 @@ class CheckCandidateProfileCompletion
             if (!$candidate) {
                 session()->flash('profile_incomplete', 'Please complete your profile.');
             } else {
-                if (!$candidate->Resume || !$candidate->Skills || !$candidate->Experience || !$candidate->Education ||
+                if (!$candidate->Experience || !$candidate->Education ||
                     !$candidate->nationality || !$candidate->gender || !$candidate->biography || !$candidate->profile_picture ||
-                    !$candidate->marital_status || !$candidate->date_of_birth || !$candidate->social_link || !$candidate->phone ||
+                    !$candidate->marital_status || !$candidate->date_of_birth || !$candidate->phone ||
                     !$candidate->email || !$candidate->location) {
 
                     session()->flash('profile_incomplete', 'Please complete your profile.');
