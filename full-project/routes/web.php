@@ -15,7 +15,7 @@ Route::get('/jobs/{job}', [JobListingController::class, 'show'])->name('jobs.sho
 // Candidate
 Route::middleware(['auth', 'verified', 'candidate', 'check.candidate.profile'])->group(function () {
     Route::get('/candidate/dashboard', [CandidateController::class, 'dashboard'])->name('candidate.dashboard');
-    Route::get('candidate/profile/complete', [CandidateController::class, 'showCompleteProfileForm'])->name('cand+idate.completeProfileForm');
+    Route::get('candidate/profile/complete', [CandidateController::class, 'showCompleteProfileForm'])->name('candidate.completeProfileForm');
     Route::post('candidate/profile/complete', [CandidateController::class, 'saveProfileStep'])->name('candidate.saveProfileStep');
     Route::put('candidate/profile/edit', [CandidateController::class, 'updateProfile'])->name('candidate.updateProfileStep');
     Route::get('candidate/setting', [CandidateController::class, 'setting'])->name('candidate.profile');

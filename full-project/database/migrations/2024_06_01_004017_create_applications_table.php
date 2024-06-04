@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('applications', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('job_id')->constrained('jobs');
+            $table->foreignId('job_id')->constrained('job_listings');
             $table->foreignId('candidate_id')->constrained('candidates');
             $table->date('application_date');
             $table->enum('status', ['Applied', 'In Review', 'Interview', 'Offered', 'Rejected'])->default('Applied');

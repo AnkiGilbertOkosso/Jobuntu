@@ -22,7 +22,7 @@ class CheckCandidateProfileCompletion
             if (!$candidate) {
                 session()->flash('profile_incomplete', 'Please complete your profile.');
             } else {
-                if (!$candidate->Experience || !$candidate->Education ||
+                if (!$candidate->experience || !$candidate->education ||
                     !$candidate->nationality || !$candidate->gender || !$candidate->biography || !$candidate->profile_picture ||
                     !$candidate->marital_status || !$candidate->date_of_birth || !$candidate->phone ||
                     !$candidate->email || !$candidate->location) {

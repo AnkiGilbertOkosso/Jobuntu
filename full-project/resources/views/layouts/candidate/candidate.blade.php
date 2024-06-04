@@ -24,7 +24,7 @@
     <style>
         th:nth-child(1),
         td:nth-child(1) {
-            width: 300px;
+            width: 450px;
         }
 
         .inset-l-full {

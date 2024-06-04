@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidate;
+use App\Models\JobListing;
 use Illuminate\Support\Facades\Auth;
 use App\Traits\FileUploadTrait;
 use Illuminate\Http\Request;
@@ -14,8 +15,9 @@ class CandidateController extends Controller
     public function dashboard()
     {
         $candidate = Auth::user()->candidate;
+        $jobs = JobListing::all();
 
-        return view('candidate.dashboard', compact('candidate'));
+        return view('candidate.dashboard', compact('candidate', 'jobs'));
     }
 
     public function setting()

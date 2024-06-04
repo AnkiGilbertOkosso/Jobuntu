@@ -28,11 +28,10 @@
             </li>
         </ul>
     </div>
-
-    <div id="Personal" class="tab-content active my-8">
-        <form action="{{ route('candidate.updateProfileStep') }}" method="POST" enctype="multipart/form-data">
-            @method('PUT')
-            @csrf
+    <form action="{{ route('candidate.updateProfileStep') }}" method="POST" enctype="multipart/form-data">
+        @method('PUT')
+        @csrf
+        <div id="Personal" class="tab-content active my-8">
             <h3 class="font-semibold text-xl">Basic Information</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                 <div class="flex flex-col space-y-3 col-span-1 items-start justify-center w-full">
@@ -41,8 +40,8 @@
                         class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100 dark:border-gray-600"
                         id="dropzone-label">
                         <div class="hidden flex-col items-center justify-center pt-5 pb-6" id="dropzone-content">
-                            <svg class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
+                            <svg class="w-10 h-10 mb-3 text-gray-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
                                 </path>
@@ -53,7 +52,7 @@
                         </div>
                         <input id="profile_picture" name="profile_picture" type="file" class="hidden" accept="image/*" />
                         <img id="picture-preview" src="{{ asset($candidate->profile_picture ?? '') }}" alt="Logo Preview"
-                                    class=" h-full w-full object-contain">
+                            class=" h-full w-full object-contain">
                     </label>
                 </div>
                 <div class="col-span-2 grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -94,13 +93,9 @@
                 <button type="submit"
                     class="w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Update</button>
             </div>
-        </form>
-    </div>
+        </div>
 
-    <div id="Profile" class="tab-content hidden my-8">
-        <form action="{{ route('candidate.updateProfileStep') }}" method="POST" enctype="multipart/form-data">
-            @method('PUT')
-            @csrf
+        <div id="Profile" class="tab-content hidden my-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="nationality">Nationality</label>
@@ -169,13 +164,9 @@
                 <button type="submit"
                     class="w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Update</button>
             </div>
-        </form>
-    </div>
+        </div>
 
-    <div id="Social" class="tab-content hidden my-8">
-        <form action="{{ route('candidate.updateProfileStep') }}" method="POST" enctype="multipart/form-data">
-            @method('PUT')
-            @csrf
+        <div id="Social" class="tab-content hidden my-8">
             <h2 class="text-2xl font-semibold mb-6">Social Media Profile</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
@@ -209,13 +200,9 @@
                 <button type="submit"
                     class="w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Update</button>
             </div>
-        </form>
-    </div>
+        </div>
 
-    <div id="Contact" class="tab-content hidden my-8">
-        <form action="{{ route('candidate.updateProfileStep') }}" method="POST" enctype="multipart/form-data">
-            @method('PUT')
-            @csrf
+        <div id="Contact" class="tab-content hidden my-8">
             <h2 class="text-2xl font-semibold mb-6">Contact</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                 <div>
@@ -243,6 +230,6 @@
                 <button type="submit"
                     class="w-full md:w-1/4 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300">Save</button>
             </div>
-        </form>
-    </div>
+        </div>
+    </form>
 @endsection

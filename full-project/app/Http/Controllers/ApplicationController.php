@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Application;
 use App\Models\JobListing;
+use Illuminate\Support\Facades\Auth;
+use App\Traits\FileUploadTrait;
 use Illuminate\Http\Request;
 
 class ApplicationController extends Controller
 {
+    use FileUploadTrait;
+
     public function store(Request $request, JobListing $job)
     {
         $request->validate([
@@ -15,21 +19,27 @@ class ApplicationController extends Controller
             'resume' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
         ]);
 
-        $resumePath = null;
-        if ($request->hasFile('resume')) {
-            $resumePath = $request->file('resume')->store('resumes', 'public');
+        $resumePath = $this->handleFileUpload($request, 'resume', $request->old_image);
+
+
+        $user = Auth::user();
+
+        if ($user && $user->candidate) {
+            $candidateId = $user->candidate->id;
+
+            $application = new Application();
+            $application->candidate_id = $candidateId;
+            $application->job_id = $job->id;
+            $application->application_date = now();
+            $application->status = 'Applied';
+            $application->cover_letter = $request->input('cover_letter');
+            $application->resume_path = $resumePath;
+            $application->save();
+
+            return redirect()->back()->with('success', 'Application submitted successfully.');
         }
 
-        Application::create([
-            'job_id' => $job->id,
-            'candidate_id' => auth()->id(),
-            'application_date' => now(),
-            'status' => 'Applied',
-            'cover_letter' => $request->cover_letter,
-            'resume_path' => $resumePath,
-        ]);
-
-        return redirect()->back()->with('success', 'Application submitted successfully.');
+        return redirect()->back()->with('error', 'You need to be logged in as a candidate to apply.');
     }
     public function candidateApplications()
     {

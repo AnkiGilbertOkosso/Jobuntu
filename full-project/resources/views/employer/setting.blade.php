@@ -39,7 +39,7 @@
                                 </p>
                             </div>
                             <input id="logo" name="logo" type="file" class="hidden" accept="image/*" />
-                            <img id="logo-preview" src="{{ old('logo', asset($employer->logo)) }}" alt="Logo Preview"
+                            <img id="logo-preview" src="{{ old('logo', asset($employer->logo) ?? '') }}" alt="Logo Preview"
                                 class=" h-full w-full object-contain">
                         </label>
                     </div>
@@ -61,7 +61,7 @@
                                 </p>
                             </div>
                             <input id="banner_image" name="banner_image" type="file" class="hidden" accept="image/*" />
-                            <img id="banner-preview" src="{{ old('banner_image', asset($employer->banner_image)) }}"
+                            <img id="banner-preview" src="{{ old('banner_image', asset($employer->banner_image) ?? '') }}"
                                 alt="Banner Preview" class="mt-3 w-full h-64 object-contain rounded-lg" />
                         </label>
                     </div>
@@ -71,13 +71,13 @@
                     <div>
                         <label for="company_name" class="block text-gray-700 font-semibold mb-2">Company Name</label>
                         <input type="text" id="company_name" name="company_name"
-                            value="{{ old('company_name', $employer->company_name) }}"
+                            value="{{ old('company_name', $employer->company_name ?? '') }}"
                             class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                     </div>
                     <div>
                         <label for="about_us" class="block text-gray-700 font-semibold mb-2">About Us</label>
                         <textarea id="about_us" name="about_us"
-                            class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">{{ old('about_us', $employer->about_us) }}</textarea>
+                            class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">{{ old('about_us', $employer->about_us ?? '') }}</textarea>
                     </div>
                 </div>
                 <div class="items-end justify-end flex">
@@ -92,26 +92,26 @@
                 <div>
                     <label for="organization_type" class="block text-gray-700 font-semibold mb-2">Organization Type</label>
                     <input type="text" id="organization_type" name="organization_type"
-                        value="{{ old('organization_type', $employer->organization_type) }}"
+                        value="{{ old('organization_type', $employer->organization_type ?? '') }}"
                         class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                 </div>
                 <div>
                     <label for="industry_types" class="block text-gray-700 font-semibold mb-2">Industry Type</label>
                     <input type="text" id="industry_types" name="industry_types"
-                        value="{{ old('industry_types', $employer->industry_types) }}"
+                        value="{{ old('industry_types', $employer->industry_types ?? '') }}"
                         class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                 </div>
                 <div>
                     <label for="team_size" class="block text-gray-700 font-semibold mb-2">Team Size</label>
                     <input type="text" id="team_size" name="team_size"
-                        value="{{ old('team_size', $employer->team_size) }}"
+                        value="{{ old('team_size', $employer->team_size ?? '') }}"
                         class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                 </div>
                 <div>
                     <label for="year_of_establishment" class="block text-gray-700 font-semibold mb-2">Year of
                         Establishment</label>
                     <input type="date" id="year_of_establishment" name="year_of_establishment"
-                        value="{{ old('year_of_establishment', $employer->year_of_establishment) }}"
+                        value="{{ old('year_of_establishment', $employer->year_of_establishment ?? '') }}"
                         class="w-full border border-gray-300 px-3 py-2 rounded-lg focus:outline-none focus:border-primary">
                 </div>
             </div>
