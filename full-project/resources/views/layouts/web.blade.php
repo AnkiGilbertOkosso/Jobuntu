@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Jobuntu') }}</title>
+    @notifyCss
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet" />
@@ -77,6 +78,7 @@
     </div>
     <!-- Top Bar End -->
 
+    <x-notify::notify />
     <!-- Nav Bar -->
     <nav class="bg-white py-4 px-4 sticky top-0 z-50">
         <div class="container mx-auto">
@@ -339,7 +341,7 @@
                 menu.classList.toggle("hidden");
             });
     </script>
-
+@notifyJs
 </body>
 
 </html>

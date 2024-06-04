@@ -57,7 +57,8 @@ class CandidateController extends Controller
 
         $user = Auth::user();
         if ($user->role != 1) {
-            return redirect()->back()->withErrors(['msg' => 'Unauthorized action.']);
+            notify()->error('Unauthorized action.');
+            return redirect()->back();
         }
         $candidate = $user->candidate ?? new Candidate();
 
@@ -85,8 +86,8 @@ class CandidateController extends Controller
         $candidate->user()->associate($user);
 
         $candidate->save();
-
-        return redirect()->route('candidate.dashboard')->with('success', 'Profile completed successfully.');
+        notify()->success('Profile completed successfully.');
+        return redirect()->route('candidate.dashboard');
     }
 
     public function updateProfile(Request $request)
@@ -113,12 +114,14 @@ class CandidateController extends Controller
 
         $user = Auth::user();
         if ($user->role != 1) {
-            return redirect()->back()->withErrors(['msg' => 'Unauthorized action.']);
+            notify()->error('Unauthorized action.');
+            return redirect()->back();
         }
 
         $candidate = $user->candidate;
         if (!$candidate) {
-            return redirect()->back()->withErrors(['msg' => 'Candidate profile not found.']);
+            notify()->error('Candidate profile not found.');
+            return redirect()->back();
         }
 
         if ($request->hasFile('profile_picture')) {
@@ -144,7 +147,7 @@ class CandidateController extends Controller
         $candidate->location = $request->input('location');
 
         $candidate->update();
-
-        return redirect()->back()->with('success', 'Profile updated successfully.');
+        notify()->success('Profile updated successfully.');
+        return redirect()->back();
     }
 }

@@ -39,7 +39,7 @@
 <!-- Top Bar End -->
 
 <!-- Nav Bar -->
-<nav class="border-b bg-white py-4 px-4 sticky top-0 z-50">
+<nav class="border-b bg-white py-4 px-4 sticky top-0 z-auto">
     <div class="container mx-auto">
         <div class="flex justify-between items-center">
             <div class="flex items-center space-x-6">

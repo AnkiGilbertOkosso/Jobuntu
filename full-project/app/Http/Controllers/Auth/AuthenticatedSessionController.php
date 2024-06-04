@@ -31,10 +31,14 @@ class AuthenticatedSessionController extends Controller
         $userRole = $request->user()->role;
 
         if ($userRole == 2){
+            notify()->success('Login successfully');
             return redirect()->intended(route('employer.dashboard', absolute: false));
         }
-        else
-        return redirect()->intended(route('candidate.dashboard', absolute: false));
+        else{
+            notify()->success('Login candidate successfully');
+            return redirect()->intended(route('candidate.dashboard', absolute: false));
+
+        }
     }
 
     /**

@@ -15,10 +15,12 @@
     <script src="https://kit.fontawesome.com/91ebbc8982.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @notifyCss
 
 </head>
 
 <body>
+    <x:notify-messages />
     <nav class="container px-4 flex mx-auto items-center justify-between py-5">
         <div><a href="{{ route('home') }}"><img src="{{ asset('assets/logo.png') }}" alt /></a></div>
     </nav>
@@ -215,7 +217,7 @@
             }
         });
     </script>
-
+@notifyJs
 </body>
 
 </html>

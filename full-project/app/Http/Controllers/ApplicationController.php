@@ -35,8 +35,8 @@ class ApplicationController extends Controller
             $application->cover_letter = $request->input('cover_letter');
             $application->resume_path = $resumePath;
             $application->save();
-
-            return redirect()->back()->with('success', 'Application submitted successfully.');
+            notify()->success('Application submitted successfully. ⚡️');
+            return redirect()->back();
         }
 
         return redirect()->back()->with('error', 'You need to be logged in as a candidate to apply.');

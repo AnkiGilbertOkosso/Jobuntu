@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Jobuntu') }}</title>
+    @notifyCss
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -39,6 +40,8 @@
 
     <!-- Dashboard -->
     <div class="container mx-auto flex">
+        <x-notify::notify />
+
         @include('layouts.employer.sidebar')
         <!-- Main Content -->
         <div class="flex-1 px-5">
@@ -141,7 +144,7 @@
         });
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.tab');
             const contents = document.querySelectorAll('.tab-content');
 
@@ -193,6 +196,7 @@
             }
         });
     </script>
+    @notifyJs
 </body>
 
 </html>

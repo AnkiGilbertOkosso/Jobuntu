@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Jobuntu') }}</title>
+    @notifyCss
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -46,6 +47,7 @@
 <body class>
     @include('layouts.candidate.navbar')
 
+    <x-notify::notify />
 
     <!-- Dashboard -->
     <div class="container mx-auto flex">
@@ -114,7 +116,7 @@
             }
         });
     </script>
-
+@notifyJs
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
 </body>
 
